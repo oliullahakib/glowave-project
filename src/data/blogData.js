@@ -1,46 +1,35 @@
 export const blogPosts = [
   {
     id: 1,
-    slug: "the-future-of-digital-growth",
-    title: "The Future of Digital Growth: AI and Personalization",
-    excerpt: "How artificial intelligence is reshaping the way brands connect with their audiences in 2024 and beyond.",
-    date: "Oct 12, 2024",
+    slug: "modern-seo-strategies-for-2024",
+    title: "Modern SEO Strategies for 2024",
+    excerpt: "Discover the latest shifts in search algorithms and how specialized SEO can drive exponential growth.",
+    content: "The landscape of Search Engine Optimization is shifting rapidly. In 2024, the focus has moved from keyword density to topical authority and user intent. At Glowave, we've pioneered a data-first approach to SEO that prioritizes semantic relevance and technical precision.\n\nKey areas of focus include:\n- Core Web Vitals optimization\n- Semantic content clustering\n- AI-enhanced search intent analysis\n- High-authority backlink architecture\n\nBy aligning your technical infrastructure with modern search requirements, you can establish a dominant organic presence that scales alongside your brand's ambitions.",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop",
+    date: "April 12, 2024",
     category: "Strategy",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop",
-    author: "Alex Rivera",
-    content: `
-      <p>The digital landscape is evolving at an unprecedented pace. Traditional marketing tactics are losing their effectiveness as consumers demand more personalized and relevant experiences.</p>
-      <h3>The AI Revolution</h3>
-      <p>Artificial Intelligence is no longer a futuristic concept; it's a present reality that's driving digital growth across industries. From predictive analytics to generative content, AI is enabling brands to understand their customers better than ever before.</p>
-      <p>At Glowave, we believe that the key to sustained growth lies in the synergy between human creativity and machine intelligence.</p>
-    `
+    author: "Marcus Thorne"
   },
   {
     id: 2,
-    slug: "designing-for-conversion",
-    title: "Designing for Conversion: Beyond Aesthetics",
-    excerpt: "Why premium design and smooth interactions are critical for turning visitors into loyal customers.",
-    date: "Oct 08, 2024",
-    category: "Design",
-    image: "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=1964&auto=format&fit=crop",
-    author: "Jordan Smith",
-    content: `
-      <p>Design is much more than just how something looks. In the context of SaaS and digital products, design is about how it works and how it makes the user feel.</p>
-      <h3>The Power of Micro-interactions</h3>
-      <p>Small animations and feedback loops can significantly improve the user experience. They provide context, guide the user's attention, and make the interface feel alive.</p>
-    `
+    slug: "the-future-of-ai-in-performance-marketing",
+    title: "The Future of AI in Performance Marketing",
+    excerpt: "Exploring how artificial intelligence is redefining targeting and ROI in modern advertising.",
+    content: "Artificial Intelligence is no longer just a buzzword in marketing; it's the engine driving high-performance campaigns. From predictive audience modeling to automated creative optimization, AI allows us to reach the right user at the perfect moment in their journey.\n\nOur Growth Engineering team utilizes AI to:\n- Automate bid management for maximum ROI\n- Generate personalized landing page variants\n- Predictive churn analysis for retention\n- Real-time sentiment mapping for brand health\n\nIntegrating AI into your marketing stack isn't just about efficiency—it's about gaining a predictive edge in a reactive market.",
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop",
+    date: "April 08, 2024",
+    category: "AI & Tech",
+    author: "Elena Vance"
   },
   {
     id: 3,
-    slug: "brand-identity-in-2024",
-    title: "The Evolution of Brand Identity in the Tech Era",
-    excerpt: "How to build a brand that resonates with tech-savvy audiences in a crowded digital marketplace.",
-    date: "Sep 28, 2024",
-    category: "Branding",
-    image: "https://images.unsplash.com/photo-1557683316-973673baf926?q=80&w=2029&auto=format&fit=crop",
-    author: "Elena Rivera",
-    content: `
-      <p>Brands today need to be authentic, transparent, and digitally native. A static logo is no longer enough; brands must tell a story across multiple touchpoints.</p>
-    `
+    slug: "designing-for-conversion-ux-best-practices",
+    title: "Designing for Conversion: UX Best Practices",
+    excerpt: "How premium interface design directly impacts your bottom line and user loyalty.",
+    content: "Experience design is the bridge between a visitor and a customer. At Glowave, we believe that every pixel should serve a strategic purpose. Conversion-centric design isn't about flashy elements; it's about reducing friction and guiding intent through visual hierarchy.\n\nEssential UX pillars for conversion:\n- Minimalist navigation with clear intent\n- High-contrast value propositions\n- Mobile-first aesthetic precision\n- Lightning-fast interactive feedback loops\n\nWhen your design matches the premium nature of your brand, conversion becomes a natural outcome of the user journey.",
+    image: "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=1964&auto=format&fit=crop",
+    date: "April 05, 2024",
+    category: "Design",
+    author: "Sophia Reed"
   }
 ];

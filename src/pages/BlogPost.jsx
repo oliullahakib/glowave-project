@@ -2,17 +2,27 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { blogPosts } from '../data/blogData';
 import PageTransition from '../components/layout/PageTransition';
+import BlogCard from '../components/blog/BlogCard';
+import SectionHeading from '../components/ui/SectionHeading';
 import { FiArrowLeft, FiCalendar, FiUser, FiClock } from 'react-icons/fi';
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 
 const BlogPost = () => {
   const { slug } = useParams();
   const navigate = useNavigate();
   const post = blogPosts.find(p => p.slug === slug);
 
+  // Filter related posts (same category first, excluding current)
+  const relatedPosts = useMemo(() => {
+    if (!post) return [];
+    const sameCategory = blogPosts.filter(p => p.category === post.category && p.slug !== post.slug);
+    const others = blogPosts.filter(p => p.category !== post.category && p.slug !== post.slug);
+    return [...sameCategory, ...others].slice(0, 3);
+  }, [post]);
+
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
-    stagger: 100,
+    stiffness: 100,
     damping: 30,
     restDelta: 0.001
   });
@@ -22,7 +32,7 @@ const BlogPost = () => {
       navigate('/blog');
     }
     window.scrollTo(0, 0);
-  }, [post, navigate]);
+  }, [post, navigate, slug]);
 
   if (!post) return null;
 
@@ -30,55 +40,104 @@ const BlogPost = () => {
     <PageTransition>
       {/* Reading Progress Bar */}
       <motion.div 
-        className="fixed top-0 left-0 right-0 h-1 bg-glow-blue z-[100] origin-left"
+        className="fixed top-0 left-0 right-0 h-1.5 bg-glowave-primary-blue z-100 origin-left shadow-premium-glow"
         style={{ scaleX }}
       />
 
-      <article className="pt-32 pb-24">
+      <article className="pt-40 pb-24">
         <div className="container mx-auto px-6 max-w-4xl">
           <Link 
             to="/blog" 
-            className="inline-flex items-center gap-2 text-white/50 hover:text-white mb-12 transition-colors uppercase text-xs tracking-widest font-bold"
+            className="inline-flex items-center gap-3 text-white/40 hover:text-glowave-primary-blue mb-16 transition-all group uppercase text-[10px] tracking-[0.3em] font-bold"
           >
-            <FiArrowLeft /> Back to Journal
+            <FiArrowLeft className="group-hover:-translate-x-1 transition-transform" /> Back to Journal
           </Link>
 
-          <header className="mb-16">
-            <span className="bg-white/5 text-glow-blue text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full border border-white/10 mb-8 inline-block">
-              {post.category}
-            </span>
-            <h1 className="text-4xl md:text-6xl font-bold font-display leading-tight mb-8">
+          <header className="mb-20">
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="flex items-center gap-3 mb-10"
+            >
+              <span className="bg-glowave-primary-blue/10 text-glowave-primary-blue text-[10px] font-bold uppercase tracking-[0.2em] px-5 py-2 rounded-full border border-glowave-primary-blue/20">
+                {post.category}
+              </span>
+              <div className="w-1.5 h-1.5 rounded-full bg-white/10" />
+              <span className="text-white/30 text-[10px] font-bold uppercase tracking-[0.2em]">{post.date}</span>
+            </motion.div>
+
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="text-5xl md:text-7xl font-bold font-display leading-[1.1] mb-12 tracking-tight"
+            >
               {post.title}
-            </h1>
-            <div className="flex flex-wrap items-center gap-8 text-white/40 text-sm">
-              <span className="flex items-center gap-2"><FiUser className="text-glow-blue" /> {post.author}</span>
-              <span className="flex items-center gap-2"><FiCalendar className="text-glow-blue" /> {post.date}</span>
-              <span className="flex items-center gap-2"><FiClock className="text-glow-blue" /> 8 min read</span>
-            </div>
+            </motion.h1>
+
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              className="flex flex-wrap items-center gap-8 text-white/50 text-sm font-medium"
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full border border-white/10 overflow-hidden">
+                  <img src={`https://i.pravatar.cc/100?u=${post.author}`} alt={post.author} className="w-full h-full object-cover" />
+                </div>
+                <span className="text-white font-bold">{post.author}</span>
+              </div>
+              <div className="w-px h-4 bg-white/10 hidden md:block" />
+              <div className="flex items-center gap-2">
+                <FiClock className="text-glowave-primary-blue" /> 
+                <span className="tracking-wide">5 min read</span>
+              </div>
+            </motion.div>
           </header>
 
-          <div className="aspect-video rounded-[2rem] overflow-hidden mb-16 shadow-2xl shadow-glow-blue/10 border border-white/10">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.3 }}
+            className="aspect-video rounded-[3rem] overflow-hidden mb-24 shadow-2xl border border-white/5 relative group"
+          >
             <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-glowave-dark-bg/10 group-hover:bg-transparent transition-colors duration-500" />
+          </motion.div>
+
+          <div className="prose prose-invert prose-2xl max-w-none prose-p:text-white/60 prose-p:leading-[1.8] prose-headings:font-display prose-headings:tracking-tight prose-strong:text-white prose-blockquote:border-glowave-primary-blue prose-blockquote:bg-white/[0.02] prose-blockquote:p-8 prose-blockquote:rounded-3xl prose-blockquote:italic">
+             {/* Using a simple splitter for demo purposes, in real app this would be more complex or markdown based */}
+             {post.content.split('\n\n').map((paragraph, i) => (
+               <p key={i} className="mb-8">{paragraph}</p>
+             ))}
           </div>
 
-          <div 
-            className="prose prose-invert prose-lg max-w-none prose-p:text-white/70 prose-headings:text-white prose-a:text-glow-blue prose-img:rounded-3xl"
-            dangerouslySetInnerHTML={{ __html: post.content }}
-          />
-
-          <footer className="mt-24 pt-12 border-t border-white/10 flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <img src="https://i.pravatar.cc/150?u=author" alt="Author" className="w-12 h-12 rounded-full border border-white/10" />
-              <div>
-                <p className="text-white font-bold">{post.author}</p>
-                <p className="text-white/40 text-sm uppercase tracking-widest text-[10px]">Senior Strategist</p>
+          {/* Related Articles Section */}
+          {relatedPosts.length > 0 && (
+            <section className="mt-40 pt-24 border-t border-white/5">
+              <div className="flex flex-col md:row items-center justify-between mb-16 gap-8">
+                <div>
+                  <span className="text-glowave-primary-blue font-bold uppercase tracking-[0.2em] text-[10px] mb-4 block">Continuum</span>
+                  <h2 className="text-4xl md:text-5xl font-bold font-display">Related <span className="text-gradient">Insights</span></h2>
+                </div>
+                <Link to="/blog" className="btn-outline-premium text-xs">Explore All Articles</Link>
               </div>
-            </div>
-            
-            <div className="flex gap-4">
-              {/* Share links would go here */}
-            </div>
-          </footer>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {relatedPosts.map((relatedPost, index) => (
+                  <motion.div
+                    key={relatedPost.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                  >
+                    <BlogCard post={relatedPost} />
+                  </motion.div>
+                ))}
+              </div>
+            </section>
+          )}
         </div>
       </article>
     </PageTransition>
