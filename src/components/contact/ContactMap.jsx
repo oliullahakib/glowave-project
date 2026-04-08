@@ -42,7 +42,7 @@ const ContactMap = () => {
             </div>
           </div>
 
-          <div className="absolute inset-0 bg-gradient-to-t from-glowave-dark-bg/60 to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-linear-to-t from-glowave-dark-bg/60 to-transparent pointer-events-none" />
         </div>
       </div>
     </motion.section>

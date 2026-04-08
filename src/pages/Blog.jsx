@@ -3,6 +3,7 @@ import SectionHeading from '../components/ui/SectionHeading';
 import BlogList from '../components/blog/BlogList';
 import CTA from '../components/home/CTA';
 import { motion } from 'framer-motion';
+import ScrollReveal from '../components/ui/ScrollReveal';
 
 const Blog = () => {
   return (
@@ -26,8 +27,8 @@ const Blog = () => {
           </div>
         </section>
         
-        <BlogList />
-        <CTA />
+        <ScrollReveal><BlogList /></ScrollReveal>
+        <ScrollReveal><CTA /></ScrollReveal>
       </div>
     </PageTransition>
   );

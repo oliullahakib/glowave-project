@@ -16,13 +16,13 @@ const FormInput = ({ label, type = "text", placeholder, isTextArea = false }) =>
       <textarea
         rows="5"
         placeholder={placeholder}
-        className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-6 text-sm focus:outline-none focus:border-glowave-primary-blue/50 focus:bg-white/[0.08] transition-all duration-300 placeholder:text-white/10"
+        className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-6 text-sm focus:outline-none focus:border-glowave-primary-blue/50 focus:bg-white/8 transition-all duration-300 placeholder:text-white/10"
       />
     ) : (
       <input
         type={type}
         placeholder={placeholder}
-        className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-6 text-sm focus:outline-none focus:border-glowave-primary-blue/50 focus:bg-white/[0.08] transition-all duration-300 placeholder:text-white/10"
+        className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-6 text-sm focus:outline-none focus:border-glowave-primary-blue/50 focus:bg-white/8 transition-all duration-300 placeholder:text-white/10"
       />
     )}
   </motion.div>

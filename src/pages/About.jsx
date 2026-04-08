@@ -6,18 +6,19 @@ import Stats from '../components/about/Stats';
 import Achievements from '../components/about/Achievements';
 import Strategy from '../components/about/Strategy';
 import CTA from '../components/home/CTA';
+import ScrollReveal from '../components/ui/ScrollReveal';
 
 const About = () => {
   return (
     <PageTransition>
       <div className="flex flex-col">
         <AboutHero />
-        <Stats />
-        <Vision />
-        <Strategy />
-        <Achievements />
-        <Team />
-        <CTA />
+        <ScrollReveal><Stats /></ScrollReveal>
+        <ScrollReveal><Vision /></ScrollReveal>
+        <ScrollReveal><Strategy /></ScrollReveal>
+        <ScrollReveal><Achievements /></ScrollReveal>
+        <ScrollReveal><Team /></ScrollReveal>
+        <ScrollReveal><CTA /></ScrollReveal>
       </div>
     </PageTransition>
   );

@@ -5,6 +5,7 @@ import ContactForm from '../components/contact/ContactForm';
 import ContactInfo from '../components/contact/ContactInfo';
 import ContactMap from '../components/contact/ContactMap';
 import ConsultationCTA from '../components/contact/ConsultationCTA';
+import ScrollReveal from '../components/ui/ScrollReveal';
 
 const Contact = () => {
   return (
@@ -53,7 +54,7 @@ const Contact = () => {
         </section>
 
         {/* Strategic CTA */}
-        <ConsultationCTA />
+        <ScrollReveal><ConsultationCTA /></ScrollReveal>
 
         {/* World-Class Infrastructure Map */}
         <div className="pb-24">
@@ -67,7 +68,7 @@ const Contact = () => {
             </motion.span>
             <h2 className="text-4xl md:text-5xl font-bold font-display tracking-tight">Global Hub <span className="text-gradient">Operation</span></h2>
           </div>
-          <ContactMap />
+          <ScrollReveal><ContactMap /></ScrollReveal>
         </div>
       </div>
     </PageTransition>
