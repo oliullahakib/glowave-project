@@ -77,7 +77,7 @@ const Pricing = () => {
               }`}
             >
               {plan.recommended && (
-                <div className="absolute top-0 right-10 -translate-y-1/2 bg-glowave-primary-blue text-white text-[10px] font-bold uppercase tracking-[0.3em] px-8 py-2.5 rounded-full shadow-premium-glow">
+                <div className="absolute top-10 right-10 -translate-y-1/2 bg-glowave-primary-blue text-white text-[10px] font-bold uppercase tracking-[0.3em] px-8 py-2.5 rounded-full shadow-premium-glow">
                   Growth Choice
                 </div>
               )}
