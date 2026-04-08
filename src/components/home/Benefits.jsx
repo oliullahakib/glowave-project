@@ -1,77 +1,147 @@
-import SectionHeading from '../ui/SectionHeading';
-import AnimatedWrapper from '../ui/AnimatedWrapper';
-import { FiCheckCircle } from 'react-icons/fi';
+import { motion } from 'framer-motion';
+import { FiZap, FiSearch, FiTarget, FiDatabase } from 'react-icons/fi';
+
+const BenefitItem = ({ benefit, index }) => {
+  const Icon = benefit.icon;
+  
+  return (
+    <motion.div
+      variants={{
+        hidden: { opacity: 0, x: -20 },
+        visible: { opacity: 1, x: 0 }
+      }}
+      className="group"
+    >
+      <div className="flex items-start gap-5 p-6 rounded-3xl transition-all duration-300 hover:bg-white/3 hover:shadow-2xl border border-transparent hover:border-white/5">
+        <div className="text-glowave-primary-blue text-3xl mt-1 p-3 rounded-2xl bg-glowave-primary-blue/10 group-hover:scale-110 transition-transform">
+          <Icon />
+        </div>
+        <div>
+          <h4 className="text-white text-xl font-bold mb-3 group-hover:text-glowave-primary-blue transition-colors">{benefit.title}</h4>
+          <p className="text-white/40 text-sm leading-relaxed max-w-xs">{benefit.description}</p>
+        </div>
+      </div>
+    </motion.div>
+  );
+};
 
 const Benefits = () => {
   const benefits = [
     {
-      title: "Data-Driven ROI",
-      description: "Our strategies are backed by rigorous data analysis to ensure every dollar spent contributes to your growth."
+      title: "Fast Performance",
+      description: "Blazing fast load times and optimized core web vitals to ensure your users stay engaged.",
+      icon: FiZap
     },
     {
-      title: "Seamless Integration",
-      description: "We work as an extension of your team, integrating smoothly with your existing workflows and goals."
+      title: "SEO Focused",
+      description: "Architecture built from the ground up for maximum search visibility and ranking potential.",
+      icon: FiSearch
     },
     {
-      title: "Modern Tech Stack",
-      description: "Utilizing the latest technologies in AI, analytics, and design to give you a competitive edge."
+      title: "Conversion Optimized",
+      description: "Strategic UI/UX patterns designed to guide visitors toward specific, high-value actions.",
+      icon: FiTarget
     },
     {
-      title: "Dedicated Support",
-      description: "Round-the-clock support and strategic consultation to keep your digital engine running at peak performance."
+      title: "Scalable Architecture",
+      description: "Robust systems ready to handle rapid growth without compromising on security or speed.",
+      icon: FiDatabase
     }
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.2
+      }
+    }
+  };
+
   return (
-    <section className="section-spacing relative bg-glowave-dark-bg">
+    <section className="section-spacing relative bg-glowave-dark-bg overflow-hidden">
+      {/* Decorative Blur */}
+      <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-glowave-primary-blue/5 rounded-full blur-[120px] -translate-x-1/2 -z-1" />
+
       <div className="container mx-auto px-6">
-        <div className="flex flex-col lg:row items-center gap-16">
-          <div className="lg:w-1/2">
-            <SectionHeading 
-              centered={false}
-              subtitle="Why Choose Us" 
-              title="Building the Infrastructure for Tomorrow's Growth" 
-            />
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-              {benefits.map((benefit, index) => (
-                <AnimatedWrapper key={index} delay={index * 0.1}>
-                  <div className="flex items-start gap-4">
-                    <div className="text-glowave-primary-blue text-2xl mt-1">
-                      <FiCheckCircle />
-                    </div>
-                    <div>
-                      <h4 className="text-white font-bold mb-2">{benefit.title}</h4>
-                      <p className="text-white/40 text-sm leading-relaxed">{benefit.description}</p>
-                    </div>
-                  </div>
-                </AnimatedWrapper>
-              ))}
-            </div>
+        <div className="flex flex-col lg:flex-row items-center gap-20">
+          <div className="lg:w-1/2 order-2 lg:order-1">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={containerVariants}
+            >
+              <div className="mb-14">
+                <span className="text-glowave-primary-blue font-bold uppercase tracking-[0.2em] text-xs mb-4 block">
+                  The Glowave Advantage
+                </span>
+                <h2 className="text-4xl md:text-6xl font-bold font-display leading-tight">
+                  Infrastructure Built for <br />
+                  <span className="text-gradient">Modern Scale</span>
+                </h2>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {benefits.map((benefit, index) => (
+                  <BenefitItem key={index} benefit={benefit} index={index} />
+                ))}
+              </div>
+            </motion.div>
           </div>
           
-          <div className="lg:w-1/2 relative">
-            <div className="aspect-square glass-effect rounded-3xl overflow-hidden shadow-2xl">
-              <img 
-                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" 
-                alt="Growth Analytics" 
-                className="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-dark-900 via-transparent to-transparent" />
-              
-              {/* Floating Element */}
-              <div className="absolute bottom-8 left-8 right-8 glass-effect p-6 rounded-2xl border border-white/20 animate-float">
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-white/60 text-sm">Monthly Growth</span>
-                  <span className="text-green-400 font-bold">+124%</span>
-                </div>
-                <div className="w-full h-2 bg-white/10 rounded-full overflow-hidden">
-                  <div className="h-full bg-glowave-primary-blue rounded-full w-[85%]" />
+          <div className="lg:w-1/2 order-1 lg:order-2 relative">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, rotate: -2 }}
+              whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              className="relative z-10"
+            >
+              <div className="aspect-4/5 md:aspect-square glass-effect rounded-[2.5rem] overflow-hidden shadow-2xl group">
+                <img 
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop" 
+                  alt="Growth Analytics" 
+                  className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-[2s]"
+                />
+                
+                {/* Floating Metrics */}
+                <motion.div 
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+                  className="absolute top-10 right-10 glass-effect p-6 rounded-3xl border border-white/20 shadow-premium-glow"
+                >
+                  <div className="flex flex-col gap-1">
+                    <span className="text-white/40 text-[10px] uppercase font-bold tracking-widest">Growth Factor</span>
+                    <span className="text-white text-3xl font-bold font-display">4.8x</span>
+                  </div>
+                </motion.div>
+
+                <div className="absolute bottom-10 left-10 right-10 glass-effect p-8 rounded-3xl border border-white/20">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center gap-3">
+                      <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+                      <span className="text-white/60 text-sm font-medium">Real-time Performance</span>
+                    </div>
+                    <span className="text-glowave-primary-blue font-bold text-sm tracking-tighter">ULTRA-FAST</span>
+                  </div>
+                  <div className="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                    <motion.div 
+                      initial={{ width: 0 }}
+                      whileInView={{ width: "94%" }}
+                      transition={{ duration: 1.5, delay: 0.5 }}
+                      className="h-full bg-linear-to-r from-glowave-primary-blue to-glowave-soft-blue rounded-full" 
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
-            
-            {/* Background Glow */}
-            <div className="absolute -z-1 -top-10 -right-10 w-64 h-64 bg-glowave-primary-blue/10 blur-3xl" />
+
+              {/* Decorative accents */}
+              <div className="absolute -top-10 -right-10 w-40 h-40 bg-glowave-primary-blue/20 blur-3xl -z-1 rounded-full" />
+              <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-glowave-deep-blue/10 blur-3xl -z-1 rounded-full" />
+            </motion.div>
           </div>
         </div>
       </div>
