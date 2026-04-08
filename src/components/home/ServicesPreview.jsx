@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { motion } from 'framer-motion';
 import { services } from '../../data/services';
 import SectionHeading from '../ui/SectionHeading';
@@ -5,7 +6,7 @@ import { FiArrowRight } from 'react-icons/fi';
 import * as Icons from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 
-const ServiceCard = ({ service, index }) => {
+const ServiceCard = memo(({ service, index }) => {
   const Icon = Icons[service.icon];
   
   return (
@@ -45,7 +46,7 @@ const ServiceCard = ({ service, index }) => {
       </div>
     </motion.div>
   );
-};
+});
 
 const ServicesPreview = () => {
   return (

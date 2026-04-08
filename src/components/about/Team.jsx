@@ -1,7 +1,8 @@
+import { memo } from 'react';
 import { motion } from 'framer-motion';
 import { FiTwitter, FiLinkedin, FiGithub } from 'react-icons/fi';
 
-const TeamMember = ({ member, index }) => (
+const TeamMember = memo(({ member, index }) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
@@ -12,7 +13,7 @@ const TeamMember = ({ member, index }) => (
     <div className="relative rounded-4xl overflow-hidden glass-effect border border-white/5 p-4 transition-all duration-500 hover:border-glowave-primary-blue/30 hover:bg-white/4">
       <div className="aspect-4/5 rounded-4xl overflow-hidden relative mb-6">
         <img 
-          src={member.image} 
+          src={`${member.image}&auto=format&fit=crop&q=80&w=400&fm=webp`} 
           alt={member.name} 
           className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
         />
@@ -37,7 +38,7 @@ const TeamMember = ({ member, index }) => (
       </div>
     </div>
   </motion.div>
-);
+));
 
 const Team = () => {
   const team = [

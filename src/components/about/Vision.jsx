@@ -14,7 +14,7 @@ const Vision = () => {
           >
             <div className="aspect-square rounded-4xl overflow-hidden glass-effect border border-white/10 group">
               <img 
-                src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop" 
+                src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1200&fm=webp" 
                 alt="Visionary Technology" 
                 className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-1000"
               />

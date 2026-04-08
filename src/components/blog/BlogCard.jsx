@@ -1,8 +1,9 @@
+import { memo } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { FiArrowRight, FiClock } from 'react-icons/fi';
 
-const BlogCard = ({ post }) => {
+const BlogCard = memo(({ post }) => {
   return (
     <motion.div
       whileHover={{ y: -10 }}
@@ -55,6 +56,6 @@ const BlogCard = ({ post }) => {
       </div>
     </motion.div>
   );
-};
+});
 
 export default BlogCard;
