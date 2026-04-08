@@ -39,6 +39,18 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Lock body scroll when menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
+
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'Services', path: '/services' },
@@ -74,7 +86,11 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-        scrolled ? 'py-4 glass-effect border-b border-white/10' : 'py-6 bg-transparent'
+        isOpen 
+          ? 'py-4 bg-glowave-dark-bg' 
+          : scrolled 
+            ? 'py-4 glass-effect border-b border-white/10' 
+            : 'py-6 bg-transparent'
       }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center text-white">
@@ -124,14 +140,14 @@ const Navbar = () => {
             animate="open"
             exit="closed"
             variants={menuVariants}
-            className="fixed inset-0 bg-glowave-dark-bg/98 backdrop-blur-2xl z-40 flex flex-col items-center justify-center gap-8 md:hidden"
+            className="fixed inset-0 bg-glowave-dark-bg backdrop-blur-2xl z-40 flex flex-col items-center pt-32 pb-12 px-6 overflow-y-auto md:hidden"
           >
             {navLinks.map((link) => (
-              <motion.div key={link.name} variants={linkVariants}>
+              <motion.div key={link.name} variants={linkVariants} className="w-full text-center py-4">
                 <Link
                   to={link.path}
-                  className={`text-4xl font-bold font-display ${
-                    location.pathname === link.path ? 'text-glowave-primary-blue' : 'text-white/70'
+                  className={`text-4xl font-bold font-display block transition-colors ${
+                    location.pathname === link.path ? 'text-glowave-primary-blue' : 'text-white/70 hover:text-white'
                   }`}
                   onClick={() => setIsOpen(false)}
                 >
@@ -139,8 +155,8 @@ const Navbar = () => {
                 </Link>
               </motion.div>
             ))}
-            <motion.div variants={linkVariants}>
-              <Button variant="primary" className="mt-8 px-12 py-4 text-xl">
+            <motion.div variants={linkVariants} className="w-full flex justify-center items-center max-w-[280px] mt-8">
+              <Button variant="primary" className="w-full py-5 text-xl" onClick={() => setIsOpen(false)}>
                 Get Started
               </Button>
             </motion.div>
