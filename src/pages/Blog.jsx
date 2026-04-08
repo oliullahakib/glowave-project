@@ -16,11 +16,11 @@ const Blog = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <SectionHeading 
-                subtitle="Resources & Insights" 
-                title="The Growth Journal" 
-              />
-              <p className="text-white/60 text-xl max-w-2xl mx-auto -mt-6">
+              <span className="text-glowave-primary-blue font-bold uppercase tracking-[0.3em] text-[10px] sm:text-[12px] mb-8 block">Resources & Insights</span>
+              <h1 className="text-display-medium leading-[0.95] tracking-tighter mb-10">
+                The Growth <span className="text-gradient">Journal</span>
+              </h1>
+              <p className="text-white/40 text-lg md:text-xl max-w-2xl mx-auto font-medium leading-relaxed">
                 Expert perspectives on digital strategy, design, and the future of brand engagement.
               </p>
             </motion.div>

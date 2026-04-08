@@ -62,7 +62,7 @@ const ServicesPreview = () => {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="text-glowave-primary-blue font-bold uppercase tracking-[0.2em] text-xs mb-4 block"
+              className="text-glowave-primary-blue font-bold uppercase tracking-[0.3em] text-[10px] sm:text-[12px] mb-8 block"
             >
               Our Expertise
             </motion.span>
@@ -70,7 +70,7 @@ const ServicesPreview = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-6xl font-bold font-display"
+              className="text-display-medium leading-[0.95] tracking-tighter"
             >
               Precision Strategies for <br />
               <span className="text-gradient">Exponential Growth</span>

@@ -70,36 +70,35 @@ const Pricing = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: index * 0.15 }}
-              whileHover={{ y: -10 }}
-              className={`relative h-full flex flex-col p-10 md:p-12 rounded-[2.5rem] border transition-all duration-500 overflow-hidden ${
+              className={`relative h-full flex flex-col p-10 md:p-14 rounded-[3rem] border transition-all duration-700 glass-effect-dark overflow-hidden ${
                 plan.recommended 
-                  ? 'bg-white/4 border-glowave-primary-blue shadow-2xl shadow-glowave-primary-blue/20' 
-                  : 'bg-white/2 border-white/5 hover:border-white/10'
+                  ? 'border-glowave-primary-blue/60 shadow-premium-glow' 
+                  : 'border-white/5 hover:border-white/20'
               }`}
             >
               {plan.recommended && (
-                <div className="absolute top-0 right-10 -translate-y-1/2 bg-glowave-primary-blue text-white text-[10px] font-bold uppercase tracking-[0.2em] px-6 py-2 rounded-full shadow-premium-glow">
-                  Recommended
+                <div className="absolute top-0 right-10 -translate-y-1/2 bg-glowave-primary-blue text-white text-[10px] font-bold uppercase tracking-[0.3em] px-8 py-2.5 rounded-full shadow-premium-glow">
+                  Growth Choice
                 </div>
               )}
               
-              <div className="mb-10 text-center md:text-left">
-                <h3 className="text-2xl font-bold mb-6 tracking-wide text-white/90">{plan.name}</h3>
-                <div className="flex items-baseline gap-2 mb-6 justify-center md:justify-start">
-                  {plan.price !== 'Custom' && <span className="text-3xl font-bold font-display text-white/40">$</span>}
-                  <span className="text-6xl font-bold font-display tracking-tight text-white">{plan.price}</span>
-                  {plan.price !== 'Custom' && <span className="text-white/30 text-base font-medium">/mo</span>}
+              <div className="mb-12 text-center md:text-left">
+                <span className="text-glowave-primary-blue font-bold uppercase tracking-[0.3em] text-[10px] mb-6 block">{plan.name}</span>
+                <div className="flex items-baseline gap-2 mb-8 justify-center md:justify-start">
+                  {plan.price !== 'Custom' && <span className="text-4xl font-bold font-display text-white/20 tracking-tighter">$</span>}
+                  <span className="text-6xl md:text-7xl font-bold font-display tracking-tighter text-white">{plan.price}</span>
+                  {plan.price !== 'Custom' && <span className="text-white/20 text-lg font-medium tracking-tight">/mo</span>}
                 </div>
-                <p className="text-white/50 text-base leading-relaxed font-medium">
+                <p className="text-white/40 text-lg leading-relaxed font-medium tracking-tight">
                   {plan.description}
                 </p>
               </div>
 
-              <div className="grow mb-12">
-                <ul className="flex flex-col gap-5">
+              <div className="grow mb-16">
+                <ul className="flex flex-col gap-6">
                   {plan.features.map((feature, i) => (
-                    <li key={i} className="flex items-start gap-4 text-sm font-medium text-white/60">
-                      <div className="w-5 h-5 rounded-full bg-glowave-primary-blue/10 flex items-center justify-center shrink-0 mt-0.5">
+                    <li key={i} className="flex items-start gap-4 text-[15px] font-medium text-white/60 tracking-tight">
+                      <div className="w-6 h-6 rounded-full bg-glowave-primary-blue/10 flex items-center justify-center shrink-0 mt-0.5">
                         <FiCheck className="text-glowave-primary-blue text-xs" />
                       </div>
                       {feature}
@@ -108,14 +107,13 @@ const Pricing = () => {
                 </ul>
               </div>
 
-              <button className={`w-full py-4 rounded-2xl text-sm font-bold transition-all duration-300 flex items-center justify-center gap-2 group ${
-                plan.recommended 
-                  ? 'bg-glowave-primary-blue text-white shadow-premium-glow hover:bg-glowave-deep-blue' 
-                  : 'bg-white/5 text-white/70 hover:bg-white/10 hover:text-white border border-white/5 hover:border-white/10'
-              }`}>
+              <Button 
+                variant={plan.recommended ? "primary" : "secondary"} 
+                className="w-full py-5 text-sm"
+              >
                 {plan.price === 'Custom' ? 'Initiate Consultation' : 'Get Started'}
-                <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
-              </button>
+                <FiArrowRight />
+              </Button>
             </motion.div>
           ))}
         </div>

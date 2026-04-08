@@ -7,7 +7,10 @@ const Counter = ({ value, direction = "up", suffix = "" }) => {
 
   const count = useMotionValue(direction === "down" ? value : 0);
   const rounded = useTransform(count, (latest) => {
-    return Math.round(latest).toLocaleString() + suffix;
+    // Check if original value was a float
+    const isFloat = !Number.isInteger(value);
+    const formattedValue = isFloat ? latest.toFixed(1) : Math.round(latest).toLocaleString();
+    return formattedValue + suffix;
   });
 
   useEffect(() => {

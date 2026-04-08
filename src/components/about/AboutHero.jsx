@@ -14,11 +14,11 @@ const AboutHero = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="text-glowave-primary-blue font-bold uppercase tracking-[0.3em] text-[10px] mb-8 block">
-              The Glowave Narrative
+            <span className="text-glowave-primary-blue font-bold uppercase tracking-[0.3em] text-[10px] sm:text-[12px] mb-8 block">
+              The Glowave Journey
             </span>
-            <h1 className="text-6xl md:text-9xl font-bold font-display leading-[0.9] tracking-tighter mb-10">
-              Architecture for <br />
+            <h1 className="text-display-large leading-[0.95] mb-12 tracking-tighter">
+              Engineering <br />
               <span className="text-gradient">The Extraordinary.</span>
             </h1>
           </motion.div>
@@ -27,9 +27,9 @@ const AboutHero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-3xl text-white/50 leading-relaxed font-medium max-w-2xl"
+            className="text-xl md:text-3xl text-white/50 leading-relaxed font-medium max-w-2xl tracking-tight"
           >
-            We are a collective of designers, engineers, and strategists obsessed with the intersection of data-driven growth and premium experience design.
+            We are a collective obsessed with the intersection of architected growth and high-fidelity experience design.
           </motion.p>
         </div>
       </div>

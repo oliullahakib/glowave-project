@@ -37,10 +37,10 @@ const Stats = () => {
         >
           {stats.map((stat, index) => (
             <motion.div key={index} variants={itemVariants} className="text-center group">
-              <div className="text-5xl md:text-7xl font-bold font-display text-white mb-4 tracking-tighter group-hover:text-glowave-primary-blue transition-colors duration-500">
+              <div className="text-6xl md:text-8xl font-bold font-display text-white mb-6 tracking-tighter group-hover:text-glowave-primary-blue transition-colors duration-500">
                 <Counter value={stat.value} suffix={stat.suffix} />
               </div>
-              <p className="text-white/40 text-xs md:text-sm font-bold uppercase tracking-[0.2em]">{stat.label}</p>
+              <p className="text-white/40 text-[10px] md:text-[12px] font-bold uppercase tracking-[0.3em]">{stat.label}</p>
               
               {/* Bottom accent */}
               <div className="w-8 h-1 bg-glowave-primary-blue/30 mx-auto mt-6 rounded-full group-hover:w-16 group-hover:bg-glowave-primary-blue transition-all duration-500" />

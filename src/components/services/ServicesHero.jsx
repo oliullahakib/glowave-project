@@ -14,15 +14,15 @@ const ServicesHero = () => {
           transition={{ duration: 0.8 }}
           className="max-w-4xl mx-auto"
         >
-          <span className="text-glowave-primary-blue font-bold uppercase tracking-[0.2em] text-xs mb-6 block">
-            Our Architecture
+          <span className="text-glowave-primary-blue font-bold uppercase tracking-[0.3em] text-[10px] sm:text-[12px] mb-8 block">
+            Operational Architecture
           </span>
-          <h1 className="text-5xl md:text-8xl font-bold font-display leading-tight mb-8">
-            Scalable Solutions for <br />
-            <span className="text-gradient">Digital Dominance</span>
+          <h1 className="text-display-large leading-[0.95] mb-12 tracking-tighter">
+            Elevate Your <br />
+            <span className="text-gradient">Digital Velocity</span>
           </h1>
-          <p className="text-xl md:text-2xl text-white/50 leading-relaxed max-w-2xl mx-auto font-medium">
-            We engineer high-performance frameworks and results-driven strategies designed to scale your brand at light speed.
+          <p className="text-xl md:text-2xl text-white/50 leading-relaxed max-w-2xl mx-auto font-medium tracking-tight">
+            We engineer high-performance frameworks and results-driven strategies designed to scale your brand with architectural precision.
           </p>
         </motion.div>
       </div>

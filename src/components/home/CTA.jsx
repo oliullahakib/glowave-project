@@ -11,19 +11,19 @@ const CTA = () => {
           <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-glowave-primary-blue/20 rounded-full blur-[100px]" />
 
           <AnimatedWrapper>
-            <h2 className="text-4xl md:text-6xl font-bold font-display tracking-tight mb-8">
+            <h2 className="text-display-medium tracking-tighter mb-10">
               Ready to Accelerate Your <br />
               <span className="text-gradient">Digital Growth?</span>
             </h2>
-            <p className="text-white/60 text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed">
+            <p className="text-white/60 text-xl max-w-2xl mx-auto mb-16 leading-relaxed font-medium tracking-tight">
               Join hundreds of high-growth companies that trust Glowave to scale their digital presence and maximize ROI.
             </p>
-            <div className="flex flex-col sm:row items-center justify-center gap-6">
-              <Button variant="primary" className="w-full sm:w-auto text-lg py-4 px-10">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
+              <Button variant="primary" className="w-full sm:w-auto text-lg py-5 px-12">
                 Book a Strategy Call
               </Button>
-              <Button variant="outline" className="w-full sm:w-auto text-lg py-4 px-10">
-                Download Case Studies
+              <Button variant="secondary" className="w-full sm:w-auto text-lg py-5 px-12">
+                Read Case Studies
               </Button>
             </div>
           </AnimatedWrapper>

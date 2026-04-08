@@ -32,15 +32,15 @@ const Vision = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <span className="text-glowave-primary-blue font-bold uppercase tracking-[0.2em] text-xs mb-6 block">
-              Company Vision
+            <span className="text-glowave-primary-blue font-bold uppercase tracking-[0.3em] text-[10px] sm:text-[12px] mb-8 block">
+              Strategic Vision
             </span>
-            <h2 className="text-4xl md:text-6xl font-bold font-display leading-tight mb-8">
+            <h2 className="text-display-medium leading-[0.95] mb-12 tracking-tighter">
               Redefining the <br />
               <span className="text-gradient">Digital Standard.</span>
             </h2>
-            <p className="text-white/50 text-xl leading-relaxed mb-10 max-w-xl">
-              Our vision is to build a world where digital experiences are not just functional, but transformative. We believe in the power of invisible technology and visible design.
+            <p className="text-white/50 text-xl leading-relaxed mb-12 max-w-xl font-medium tracking-tight">
+              Our vision is to architect a world where digital experiences are not just functional, but transformative. We believe in the power of invisible technology and visible design.
             </p>
             <div className="space-y-6">
               {[

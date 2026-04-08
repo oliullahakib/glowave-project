@@ -29,20 +29,20 @@ const Strategy = () => {
       <div className="absolute inset-0 glow-mesh opacity-20" />
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="flex flex-col items-center text-center mb-20">
+        <div className="flex flex-col items-center text-center mb-24 md:mb-32">
           <motion.span 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-glowave-primary-blue font-bold uppercase tracking-[0.2em] text-xs mb-4"
+            className="text-glowave-primary-blue font-bold uppercase tracking-[0.3em] text-[10px] sm:text-[12px] mb-8"
           >
-            The Glowave Methodology
+            Tactical Methodology
           </motion.span>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-bold font-display"
+            className="text-display-medium leading-[0.95] tracking-tighter"
           >
             A Strategy for <br />
             <span className="text-gradient">Endless Acceleration.</span>

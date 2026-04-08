@@ -122,20 +122,20 @@ const Hero = () => {
               The Next Evolution of Growth
             </motion.span>
 
-            <h1 className="text-6xl md:text-8xl font-bold font-display leading-[1.05] mb-10 tracking-tight">
-              Grow Your Business <br />
+            <h1 className="text-display-large leading-[0.95] mb-12 tracking-tighter">
+              Architecting <br />
               <span className="text-gradient">
-                With Smart Digital <br /> Solutions
+                Digital Dominance
               </span>
             </h1>
 
-            <p className="text-lg md:text-2xl text-white/50 mb-12 leading-relaxed max-w-2xl font-medium">
-              We build high-performing websites, powerful SEO strategies, and results-driven marketing to scale your brand exponentially.
+            <p className="text-xl md:text-2xl text-white/50 mb-16 leading-relaxed max-w-2xl font-medium tracking-tight">
+              We engineer high-performance visual experiences and strategic growth systems for the world's most ambitious brands.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center gap-6">
-              <Button variant="primary" className="w-full sm:w-auto px-10 py-5 text-lg group">
-                Get Started
+            <div className="flex flex-col sm:flex-row items-center gap-8">
+              <Button variant="primary" className="w-full sm:w-auto px-12 py-5 text-lg group">
+                Initialize Project
                 <motion.span
                   animate={{ x: [0, 5, 0] }}
                   transition={{ repeat: Infinity, duration: 1.5 }}
@@ -143,8 +143,8 @@ const Hero = () => {
                   →
                 </motion.span>
               </Button>
-              <Button variant="secondary" className="w-full sm:w-auto px-10 py-5 text-lg">
-                View Services
+              <Button variant="secondary" className="w-full sm:w-auto px-12 py-5 text-lg">
+                Explore Capabilities
               </Button>
             </div>
 

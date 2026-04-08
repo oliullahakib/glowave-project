@@ -67,9 +67,9 @@ const Team = () => {
   return (
     <section className="section-spacing bg-glowave-dark-bg relative overflow-hidden">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col items-center text-center mb-20">
-          <span className="text-glowave-primary-blue font-bold uppercase tracking-[0.2em] text-xs mb-4">The Collective</span>
-          <h2 className="text-4xl md:text-6xl font-bold font-display leading-tight">
+        <div className="flex flex-col items-center text-center mb-24 md:mb-32">
+          <span className="text-glowave-primary-blue font-bold uppercase tracking-[0.3em] text-[10px] sm:text-[12px] mb-8 block">The Collective</span>
+          <h2 className="text-display-medium leading-[0.95] tracking-tighter">
             Engineered by <br />
             <span className="text-gradient">World-Class Minds</span>
           </h2>
