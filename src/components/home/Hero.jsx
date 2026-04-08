@@ -1,100 +1,185 @@
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls, Float, MeshDistortMaterial } from '@react-three/drei';
-import { motion } from 'framer-motion';
+import { Float, MeshDistortMaterial, Sphere } from '@react-three/drei';
+import { motion, useSpring } from 'framer-motion';
 import Button from '../ui/Button';
 
-const AnimatedShape = () => {
+// 3D Glass Sphere Component
+const GlassSphere = () => {
   const meshRef = useRef();
   
   useFrame((state) => {
     const t = state.clock.getElapsedTime();
     meshRef.current.rotation.x = Math.cos(t / 4) / 4;
     meshRef.current.rotation.y = Math.sin(t / 4) / 4;
-    meshRef.current.rotation.z = Math.sin(t / 4) / 4;
-    meshRef.current.position.y = Math.sin(t / 1.5) / 10;
   });
 
   return (
-    <mesh ref={meshRef}>
-      <sphereGeometry args={[1, 64, 64]} />
+    <Sphere ref={meshRef} args={[1, 64, 64]}>
       <MeshDistortMaterial
-        color="#00d2ff"
-        speed={3}
+        color="#0062E0"
+        speed={2}
         distort={0.4}
         radius={1}
+        roughness={0.1}
+        metalness={0.8}
+        emissive="#003E99"
+        emissiveIntensity={0.5}
       />
-    </mesh>
+    </Sphere>
   );
 };
 
+// Floating Badge Component
+const FloatingBadge = ({ children, delay = 0, className = "" }) => (
+  <motion.div
+    initial={{ opacity: 0, scale: 0.8 }}
+    animate={{ opacity: 1, scale: 1 }}
+    transition={{ duration: 0.8, delay }}
+  >
+    <motion.div
+      animate={{ 
+        y: [0, -15, 0],
+        rotate: [0, 2, -2, 0]
+      }}
+      transition={{ 
+        duration: 5, 
+        repeat: Infinity, 
+        ease: "easeInOut" 
+      }}
+      className={`glass-effect px-4 py-2 rounded-xl text-[10px] font-bold uppercase tracking-widest flex items-center gap-2 border border-white/10 ${className}`}
+    >
+      <div className="w-1.5 h-1.5 rounded-full bg-glowave-primary-blue animate-pulse" />
+      {children}
+    </motion.div>
+  </motion.div>
+);
+
 const Hero = () => {
+  const containerRef = useRef(null);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
+  // Mouse Parallax Effect
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePos({
+        x: (e.clientX / window.innerWidth - 0.5) * 40,
+        y: (e.clientY / window.innerHeight - 0.5) * 40,
+      });
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  const smoothX = useSpring(mousePos.x, { stiffness: 50, damping: 20 });
+  const smoothY = useSpring(mousePos.y, { stiffness: 50, damping: 20 });
+
   return (
-    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-      {/* Background 3D Element */}
-      <div className="absolute top-1/2 right-[-10%] w-[60%] h-[80%] -translate-y-1/2 z-0 hidden lg:block opacity-60">
-        <Canvas camera={{ position: [0, 0, 4] }}>
+    <section 
+      ref={containerRef}
+      className="relative min-h-screen flex items-center pt-28 pb-20 overflow-hidden bg-glowave-dark-bg"
+    >
+      {/* 3D Background Canvas */}
+      <div className="absolute top-1/2 right-[-5%] w-[55%] h-[80%] -translate-y-1/2 z-0 hidden lg:block opacity-80 pointer-events-none">
+        <Canvas camera={{ position: [0, 0, 4] }} dpr={[1, 2]}>
           <ambientLight intensity={0.5} />
           <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-          <pointLight position={[-10, -10, -10]} />
-          <Float speed={2} rotationIntensity={1} floatIntensity={1}>
-            <AnimatedShape />
+          <pointLight position={[-10, -10, -10]} intensity={1} />
+          
+          <Float speed={1.5} rotationIntensity={0.5} floatIntensity={1}>
+            <GlassSphere />
           </Float>
-          <OrbitControls enableZoom={false} />
         </Canvas>
       </div>
 
+      {/* Liquid Gradient Blobs */}
+      <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-glowave-primary-blue/20 rounded-full blur-[120px] animate-pulse -z-1" />
+      <div className="absolute bottom-[10%] right-[10%] w-[30%] h-[30%] bg-glowave-deep-blue/20 rounded-full blur-[120px] animate-pulse -z-1" />
+
       <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-3xl">
+        <div className="max-w-4xl">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            style={{ x: smoothX, y: smoothY }}
+            className="relative"
           >
-            <span className="inline-block py-1 px-4 rounded-full border border-glowave-primary-blue/30 bg-glowave-primary-blue/10 text-glowave-primary-blue text-sm font-medium mb-6">
-              Empowering Digital Futures
-            </span>
-            <h1 className="text-5xl md:text-7xl font-bold font-display leading-[1.1] mb-8">
-              Navigate Your Brand to <br />
+            {/* Floating Badges */}
+            <div className="absolute -top-12 -left-4 hidden md:block">
+              <FloatingBadge delay={0.2} className="text-glowave-primary-blue">SEO Optimized</FloatingBadge>
+            </div>
+            <div className="absolute top-1/2 -right-12 hidden lg:block translate-x-24 -translate-y-12">
+              <FloatingBadge delay={0.4}>AI Performance</FloatingBadge>
+            </div>
+
+            <motion.span 
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.3 }}
+              className="inline-block py-2 px-5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-glowave-soft-blue text-xs font-bold uppercase tracking-[0.2em] mb-8"
+            >
+              The Next Evolution of Growth
+            </motion.span>
+
+            <h1 className="text-6xl md:text-8xl font-bold font-display leading-[1.05] mb-10 tracking-tight">
+              Grow Your Business <br />
               <span className="text-gradient">
-                Digital Excellence
+                With Smart Digital <br /> Solutions
               </span>
             </h1>
-            <p className="text-xl text-white/60 mb-10 leading-relaxed max-w-2xl">
-              We combine data-driven strategies with high-end creative execution to scale your digital presence beyond expectations.
+
+            <p className="text-lg md:text-2xl text-white/50 mb-12 leading-relaxed max-w-2xl font-medium">
+              We build high-performing websites, powerful SEO strategies, and results-driven marketing to scale your brand exponentially.
             </p>
-            <div className="flex flex-col sm:row items-center gap-4">
-              <Button variant="primary" className="w-full sm:w-auto">
-                Start Your Journey
+
+            <div className="flex flex-col sm:flex-row items-center gap-6">
+              <Button variant="primary" className="w-full sm:w-auto px-10 py-5 text-lg group">
+                Get Started
+                <motion.span
+                  animate={{ x: [0, 5, 0] }}
+                  transition={{ repeat: Infinity, duration: 1.5 }}
+                >
+                  →
+                </motion.span>
               </Button>
-              <Button variant="secondary" className="w-full sm:w-auto">
-                View Our Work
+              <Button variant="secondary" className="w-full sm:w-auto px-10 py-5 text-lg">
+                View Services
               </Button>
             </div>
 
-            <div className="mt-16 flex items-center gap-8">
-              <div>
-                <p className="text-3xl font-bold font-display">250+</p>
-                <p className="text-white/40 text-sm">Worldwide Clients</p>
+            {/* Social Proof / Stats */}
+            <div className="mt-20 flex flex-wrap items-center gap-12">
+              <div className="flex -space-x-4">
+                {[1,2,3,4].map(i => (
+                  <div key={i} className="w-12 h-12 rounded-full border-4 border-glowave-dark-bg bg-dark-800 flex items-center justify-center overflow-hidden">
+                    <img src={`https://i.pravatar.cc/150?u=${i}`} alt="user" />
+                  </div>
+                ))}
+                <div className="w-12 h-12 rounded-full border-4 border-glowave-dark-bg bg-glowave-primary-blue flex items-center justify-center text-[10px] font-bold">
+                  50k+
+                </div>
               </div>
-              <div className="w-px h-10 bg-white/10" />
               <div>
-                <p className="text-3xl font-bold font-display">95%</p>
-                <p className="text-white/40 text-sm">Success Rate</p>
-              </div>
-              <div className="w-px h-10 bg-white/10" />
-              <div>
-                <p className="text-3xl font-bold font-display">15+</p>
-                <p className="text-white/40 text-sm">Year Experience</p>
+                <p className="text-white/80 font-bold">Trusted by 500+ scale-ups</p>
+                <div className="flex gap-1 text-glowave-primary-blue mt-1">
+                  {"★★★★★".split("").map((s, i) => <span key={i}>{s}</span>)}
+                </div>
               </div>
             </div>
           </motion.div>
         </div>
       </div>
 
-      {/* Hero Glows */}
-      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-glow-blue/20 rounded-full blur-[150px] -z-1" />
-      <div className="absolute bottom-1/4 right-1/4 w-[300px] h-[300px] bg-glow-primary/20 rounded-full blur-[120px] -z-1" />
+      {/* Scroll Indicator */}
+      <motion.div 
+        animate={{ y: [0, 10, 0] }}
+        transition={{ repeat: Infinity, duration: 2 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-30"
+      >
+        <span className="text-[10px] uppercase tracking-widest font-bold">Scroll</span>
+        <div className="w-px h-12 bg-linear-to-b from-white to-transparent" />
+      </motion.div>
     </section>
   );
 };

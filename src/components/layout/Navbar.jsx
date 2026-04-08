@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import { FiMenu, FiX } from 'react-icons/fi';
 import Button from '../ui/Button';
+import logo from '../../assets/glowavelogo.png';
 
 const NavLink = ({ children, path, active, onClick }) => {
   return (
@@ -79,10 +80,10 @@ const Navbar = () => {
       <div className="container mx-auto px-6 flex justify-between items-center text-white">
         <Link to="/" className="text-2xl font-bold font-display tracking-tighter flex items-center gap-2">
           <motion.div 
-            whileHover={{ rotate: 180 }}
-            className="w-8 h-8 rounded-lg bg-glowave-primary-blue shadow-premium-glow flex items-center justify-center"
+            whileHover={{ scale: 1.1 }}
+            className="w-8 h-8 flex items-center justify-center overflow-hidden"
           >
-            <div className="w-4 h-4 rounded-sm bg-white/20" />
+            <img src={logo} alt="Glowave Logo" className="w-full h-full object-contain" />
           </motion.div>
           <span>Glowave</span>
         </Link>

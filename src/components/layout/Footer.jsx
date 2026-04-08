@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FiGithub, FiTwitter, FiLinkedin, FiInstagram, FiMail, FiArrowRight } from 'react-icons/fi';
+import logo from '../../assets/glowavelogo.png';
 
 const SocialIcon = ({ Icon, href }) => (
   <motion.a
@@ -34,8 +35,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-16 mb-24">
           <div className="md:col-span-4">
             <Link to="/" className="text-3xl font-bold font-display tracking-tighter flex items-center gap-3 mb-8">
-              <div className="w-10 h-10 rounded-xl bg-glowave-primary-blue shadow-premium-glow flex items-center justify-center">
-                <div className="w-5 h-5 rounded-sm bg-white/20 rotate-45" />
+              <div className="w-10 h-10 rounded-xl overflow-hidden shadow-premium-glow flex items-center justify-center">
+                <img src={logo} alt="Glowave Logo" className="w-full h-full object-contain" />
               </div>
               <span>Glowave</span>
             </Link>
@@ -72,7 +73,7 @@ const Footer = () => {
           </div>
 
           <div className="md:col-span-4">
-            <div className="glass-effect rounded-[2rem] p-8 border border-white/10 relative">
+            <div className="glass-effect rounded-4xl p-8 border border-white/10 relative">
               <h4 className="text-xl font-bold mb-4">Stay Synchronized</h4>
               <p className="text-white/50 text-sm mb-8">Get quarterly insights on digital growth and high-end design.</p>
               

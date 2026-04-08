@@ -94,7 +94,7 @@ body {
 
 /* Animated Card */
 @utility animated-card {
-  @apply glass-effect rounded-[2rem] p-8 transition-all duration-500 hover:-translate-y-2 hover:bg-white/[0.05];
+  @apply bg-white/[0.03] backdrop-blur-xl border border-white/10 shadow-2xl rounded-[2rem] p-8 transition-all duration-500 hover:-translate-y-2 hover:bg-white/[0.05];
 }
 
 @utility glow-mesh {
