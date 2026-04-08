@@ -77,7 +77,7 @@ const Hero = () => {
   return (
     <section 
       ref={containerRef}
-      className="relative min-h-screen flex items-center pt-48 pb-20 overflow-hidden bg-glowave-dark-bg"
+      className="relative min-h-screen flex items-center pt-28 md:pt-48 pb-20 overflow-hidden bg-glowave-dark-bg"
     >
       {/* 3D Background Canvas */}
       <div className="absolute top-1/2 right-[-5%] w-[55%] h-[80%] -translate-y-1/2 z-0 hidden lg:block opacity-80 pointer-events-none">
