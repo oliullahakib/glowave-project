@@ -4,6 +4,7 @@ import Vision from '../components/about/Vision';
 import Team from '../components/about/Team';
 import Stats from '../components/about/Stats';
 import Achievements from '../components/about/Achievements';
+import Strategy from '../components/about/Strategy';
 import CTA from '../components/home/CTA';
 
 const About = () => {
@@ -13,6 +14,7 @@ const About = () => {
         <AboutHero />
         <Stats />
         <Vision />
+        <Strategy />
         <Achievements />
         <Team />
         <CTA />

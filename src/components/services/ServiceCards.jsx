@@ -1,39 +1,56 @@
 import { services } from '../../data/services';
-import Card from '../ui/Card';
-import AnimatedWrapper from '../ui/AnimatedWrapper';
+import { motion } from 'framer-motion';
 import * as Icons from 'react-icons/fi';
+import { FiCheckCircle } from 'react-icons/fi';
 
 const ServiceCards = () => {
   return (
-    <section className="py-24 bg-dark-900/50">
+    <section className="py-32 bg-glowave-dark-bg/50">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
           {services.map((service, index) => {
             const Icon = Icons[service.icon];
             return (
-              <AnimatedWrapper key={service.id} delay={index * 0.1}>
-                <Card className="p-10 h-full border-t-4" style={{ borderTopColor: service.color.includes('cyan') ? '#00d2ff' : '#3a7bd5' }}>
-                  <div className="flex flex-col md:row items-start gap-8">
-                    <div className={`w-20 h-20 shrink-0 rounded-3xl bg-gradient-to-br ${service.color} flex items-center justify-center text-white text-4xl shadow-2xl`}>
-                      <Icon />
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
-                      <p className="text-white/60 text-lg leading-relaxed mb-6">
-                        {service.description}
-                      </p>
-                      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        {['Strategic Planning', 'Data Analytics', 'Market Research', 'Full Execution'].map((item, i) => (
-                          <li key={i} className="flex items-center gap-2 text-sm text-white/40">
-                            <div className="w-1.5 h-1.5 rounded-full bg-glowave-primary-blue" />
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
+              <motion.div
+                key={service.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                className="group relative"
+              >
+                {/* Glow Backdrop */}
+                <div className="absolute inset-0 bg-glowave-primary-blue/5 rounded-[3rem] blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                
+                <div className="animated-card h-full p-12 flex flex-col items-start border border-white/5 group-hover:border-glowave-primary-blue/20 overflow-hidden relative">
+                  <div className={`w-20 h-20 shrink-0 rounded-2xl bg-linear-to-br ${service.color} flex items-center justify-center text-white text-4xl shadow-2xl mb-12 shadow-glowave-primary-blue/20`}>
+                    <Icon />
+                  </div>
+                  
+                  <div className="grow">
+                    <h3 className="text-3xl font-bold mb-6 tracking-tight">{service.title}</h3>
+                    <p className="text-white/50 text-xl leading-relaxed mb-10">
+                      {service.description}
+                    </p>
+                    
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8">
+                      {[
+                        'Custom Architecture', 
+                        'Data Intelligence', 
+                        'High-End UI/UX', 
+                        'Full-Stack Mastery',
+                        'SEO Framework',
+                        'Scalable Logic'
+                      ].map((item, i) => (
+                        <div key={i} className="flex items-center gap-3 text-sm font-medium text-white/30 group-hover:text-white/60 transition-colors">
+                          <FiCheckCircle className="text-glowave-primary-blue" />
+                          {item}
+                        </div>
+                      ))}
                     </div>
                   </div>
-                </Card>
-              </AnimatedWrapper>
+                </div>
+              </motion.div>
             );
           })}
         </div>

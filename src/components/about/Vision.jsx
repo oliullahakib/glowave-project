@@ -1,46 +1,62 @@
-import SectionHeading from '../ui/SectionHeading';
-import AnimatedWrapper from '../ui/AnimatedWrapper';
+import { motion } from 'framer-motion';
 
 const Vision = () => {
-  const points = [
-    {
-      title: "Authenticity",
-      description: "We believe in building brands that are true to their core values and transparent with their audience."
-    },
-    {
-      title: "Innovation",
-      description: "Constantly pushing the boundaries of what's possible with technology and creative strategy."
-    },
-    {
-      title: "Impact",
-      description: "Measuring success not just in numbers, but in the lasting positive impact we create for our partners."
-    }
-  ];
-
   return (
-    <section className="py-24 bg-dark-800/50">
+    <section className="section-spacing bg-glowave-dark-bg">
       <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto">
-          <SectionHeading 
-            subtitle="Our Vision" 
-            title="Redefining the Standard for Digital Excellence" 
-          />
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-16">
-            {points.map((point, index) => (
-              <AnimatedWrapper key={index} delay={index * 0.1}>
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-glow-blue/10 rounded-full flex items-center justify-center text-glow-blue font-bold text-xl mx-auto mb-6">
-                    0{index + 1}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+            className="relative"
+          >
+            <div className="aspect-square rounded-4xl overflow-hidden glass-effect border border-white/10 group">
+              <img 
+                src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop" 
+                alt="Visionary Technology" 
+                className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-1000"
+              />
+              <div className="absolute inset-0 bg-linear-to-t from-glowave-dark-bg via-transparent to-transparent" />
+            </div>
+            
+            {/* Visual Accents */}
+            <div className="absolute -top-10 -left-10 w-40 h-40 bg-glowave-primary-blue/20 blur-3xl -z-1" />
+            <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-glowave-deep-blue/20 blur-3xl -z-1" />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <span className="text-glowave-primary-blue font-bold uppercase tracking-[0.2em] text-xs mb-6 block">
+              Company Vision
+            </span>
+            <h2 className="text-4xl md:text-6xl font-bold font-display leading-tight mb-8">
+              Redefining the <br />
+              <span className="text-gradient">Digital Standard.</span>
+            </h2>
+            <p className="text-white/50 text-xl leading-relaxed mb-10 max-w-xl">
+              Our vision is to build a world where digital experiences are not just functional, but transformative. We believe in the power of invisible technology and visible design.
+            </p>
+            <div className="space-y-6">
+              {[
+                { title: "Innovation First", desc: "Technically advanced solutions that push boundaries." },
+                { title: "Human Centric", desc: "Design that speaks to the user, not just the interface." }
+              ].map((item, i) => (
+                <div key={i} className="flex gap-6 items-start">
+                  <div className="w-1.5 h-1.5 rounded-full bg-glowave-primary-blue mt-2.5 shrink-0" />
+                  <div>
+                    <h4 className="text-white font-bold mb-1">{item.title}</h4>
+                    <p className="text-white/40 text-sm">{item.desc}</p>
                   </div>
-                  <h3 className="text-xl font-bold mb-4">{point.title}</h3>
-                  <p className="text-white/50 text-sm leading-relaxed">
-                    {point.description}
-                  </p>
                 </div>
-              </AnimatedWrapper>
-            ))}
-          </div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>
