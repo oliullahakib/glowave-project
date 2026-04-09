@@ -12,13 +12,13 @@ const BenefitItem = ({ benefit, index }) => {
       }}
       className="group"
     >
-      <div className="flex items-start gap-5 p-6 rounded-3xl transition-all duration-300 hover:bg-white/3 hover:shadow-2xl border border-transparent hover:border-white/5">
+      <div className="flex items-start gap-5 p-6 rounded-3xl transition-all duration-300 hover:bg-slate-50 shadow-xl border border-transparent hover:border-slate-100">
         <div className="text-glowave-primary-blue text-3xl mt-1 p-3 rounded-2xl bg-glowave-primary-blue/10 group-hover:scale-110 transition-transform">
           <Icon />
         </div>
         <div>
-          <h4 className="text-white text-xl font-bold mb-3 group-hover:text-glowave-primary-blue transition-colors">{benefit.title}</h4>
-          <p className="text-white/40 text-sm leading-relaxed max-w-xs">{benefit.description}</p>
+          <h4 className="text-glowave-text text-xl font-bold mb-3 group-hover:text-glowave-primary-blue transition-colors">{benefit.title}</h4>
+          <p className="text-slate-400 text-sm leading-relaxed max-w-xs">{benefit.description}</p>
         </div>
       </div>
     </motion.div>
@@ -61,7 +61,7 @@ const Benefits = () => {
   };
 
   return (
-    <section className="section-spacing relative bg-glowave-dark-bg overflow-hidden">
+    <section className="section-spacing relative bg-white overflow-hidden">
       {/* Decorative Blur */}
       <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-glowave-primary-blue/5 rounded-full blur-[120px] -translate-x-1/2 -z-1" />
 
@@ -100,34 +100,34 @@ const Benefits = () => {
               transition={{ duration: 1, ease: "easeOut" }}
               className="relative z-10"
             >
-              <div className="aspect-4/5 md:aspect-square glass-effect rounded-[2.5rem] overflow-hidden shadow-2xl group">
+              <div className="aspect-4/5 md:aspect-square rounded-[2.5rem] overflow-hidden shadow-2xl group">
                 <img 
                   src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop" 
                   alt="Growth Analytics" 
-                  className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-[2s]"
+                  className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-[2s]"
                 />
                 
                 {/* Floating Metrics */}
                 <motion.div 
                   animate={{ y: [0, -10, 0] }}
                   transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                  className="absolute top-10 right-10 glass-effect p-6 rounded-3xl border border-white/20 shadow-premium-glow"
+                  className="absolute top-10 right-10 glass-effect p-6 rounded-3xl border border-slate-300 shadow-premium-glow"
                 >
                   <div className="flex flex-col gap-1">
-                    <span className="text-white/40 text-[10px] uppercase font-bold tracking-widest">Growth Factor</span>
-                    <span className="text-white text-3xl font-bold font-display">4.8x</span>
+                    <span className="text-slate-400 text-[10px] uppercase font-bold tracking-widest">Growth Factor</span>
+                    <span className="text-glowave-text text-3xl font-bold font-display">4.8x</span>
                   </div>
                 </motion.div>
 
-                <div className="absolute bottom-10 left-10 right-10 glass-effect p-8 rounded-3xl border border-white/20">
+                <div className="absolute bottom-10 left-10 right-10 glass-effect p-8 rounded-3xl border border-slate-300">
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-3">
                       <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                      <span className="text-white/60 text-sm font-medium">Real-time Performance</span>
+                      <span className="text-slate-600 text-sm font-medium">Real-time Performance</span>
                     </div>
                     <span className="text-glowave-primary-blue font-bold text-sm tracking-tighter">ULTRA-FAST</span>
                   </div>
-                  <div className="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                  <div className="w-full h-1.5 bg-slate-200 rounded-full overflow-hidden">
                     <motion.div 
                       initial={{ width: 0 }}
                       whileInView={{ width: "94%" }}

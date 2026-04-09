@@ -9,12 +9,12 @@ const InfoItem = ({ Icon, label, value, index }) => (
     transition={{ delay: index * 0.1 }}
     className="flex items-center gap-6 group"
   >
-    <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-white text-2xl group-hover:bg-glowave-primary-blue/10 group-hover:text-glowave-primary-blue group-hover:border-glowave-primary-blue/20 transition-all duration-500 shadow-xl">
+    <div className="w-14 h-14 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-center text-glowave-text text-2xl group-hover:bg-glowave-primary-blue/10 group-hover:text-glowave-primary-blue group-hover:border-glowave-primary-blue/20 transition-all duration-500 shadow-sm">
       <Icon />
     </div>
     <div>
-      <p className="text-[10px] uppercase tracking-widest font-bold text-white/30 mb-1">{label}</p>
-      <p className="text-white text-lg font-medium group-hover:text-glowave-primary-blue transition-colors duration-500">{value}</p>
+      <p className="text-[10px] uppercase tracking-widest font-bold text-slate-400 mb-1">{label}</p>
+      <p className="text-glowave-text text-lg font-medium group-hover:text-glowave-primary-blue transition-colors duration-500">{value}</p>
     </div>
   </motion.div>
 );

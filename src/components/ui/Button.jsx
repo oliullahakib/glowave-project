@@ -32,7 +32,7 @@ const Button = ({ children, variant = "primary", className = "", ...props }) => 
   const variants = {
     primary: "btn-premium",
     secondary: "btn-outline-premium",
-    outline: "border-2 border-white/10 hover:border-glowave-primary-blue/50 text-white rounded-full px-8 py-3.5 transition-all duration-300"
+    outline: "border-2 border-slate-200 hover:border-glowave-primary-blue/50 text-glowave-text rounded-full px-8 py-3.5 transition-all duration-300"
   };
 
   return (

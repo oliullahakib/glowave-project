@@ -48,7 +48,7 @@ const BlogPost = () => {
         <div className="container mx-auto px-6 max-w-4xl">
           <Link 
             to="/blog" 
-            className="inline-flex items-center gap-3 text-white/40 hover:text-glowave-primary-blue mb-16 transition-all group uppercase text-[10px] tracking-[0.3em] font-bold"
+            className="inline-flex items-center gap-3 text-slate-400 hover:text-glowave-primary-blue mb-16 transition-all group uppercase text-[10px] tracking-[0.3em] font-bold"
           >
             <FiArrowLeft className="group-hover:-translate-x-1 transition-transform" /> Back to Journal
           </Link>
@@ -62,8 +62,8 @@ const BlogPost = () => {
               <span className="bg-glowave-primary-blue/10 text-glowave-primary-blue text-[10px] font-bold uppercase tracking-[0.2em] px-5 py-2 rounded-full border border-glowave-primary-blue/20">
                 {post.category}
               </span>
-              <div className="w-1.5 h-1.5 rounded-full bg-white/10" />
-              <span className="text-white/30 text-[10px] font-bold uppercase tracking-[0.2em]">{post.date}</span>
+              <div className="w-1.5 h-1.5 rounded-full bg-slate-200" />
+              <span className="text-slate-400 text-[10px] font-bold uppercase tracking-[0.2em]">{post.date}</span>
             </motion.div>
 
             <motion.h1 
@@ -79,15 +79,15 @@ const BlogPost = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
-              className="flex flex-wrap items-center gap-8 text-white/50 text-sm font-medium"
+              className="flex flex-wrap items-center gap-8 text-slate-500 text-sm font-medium"
             >
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full border border-white/10 overflow-hidden">
+                <div className="w-10 h-10 rounded-full border border-slate-200 overflow-hidden">
                   <img src={`https://i.pravatar.cc/100?u=${post.author}`} alt={post.author} className="w-full h-full object-cover" />
                 </div>
-                <span className="text-white font-bold">{post.author}</span>
+                <span className="text-glowave-text font-bold">{post.author}</span>
               </div>
-              <div className="w-px h-4 bg-white/10 hidden md:block" />
+              <div className="w-px h-4 bg-slate-200 hidden md:block" />
               <div className="flex items-center gap-2">
                 <FiClock className="text-glowave-primary-blue" /> 
                 <span className="tracking-wide">5 min read</span>
@@ -99,13 +99,13 @@ const BlogPost = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3 }}
-            className="aspect-video rounded-[3rem] overflow-hidden mb-24 shadow-2xl border border-white/5 relative group"
+            className="aspect-video rounded-[3rem] overflow-hidden mb-24 shadow-2xl border border-slate-100 relative group"
           >
             <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-glowave-dark-bg/10 group-hover:bg-transparent transition-colors duration-500" />
+            <div className="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors duration-500" />
           </motion.div>
 
-          <div className="prose prose-invert prose-2xl max-w-none prose-p:text-white/60 prose-p:leading-[1.8] prose-headings:font-display prose-headings:tracking-tight prose-strong:text-white prose-blockquote:border-glowave-primary-blue prose-blockquote:bg-white/[0.02] prose-blockquote:p-8 prose-blockquote:rounded-3xl prose-blockquote:italic">
+          <div className="prose prose-2xl max-w-none prose-p:text-slate-600 prose-p:leading-[1.8] prose-headings:font-display prose-headings:tracking-tight prose-headings:text-glowave-text prose-strong:text-glowave-text prose-blockquote:border-glowave-primary-blue prose-blockquote:bg-slate-50 prose-blockquote:p-8 prose-blockquote:rounded-3xl prose-blockquote:italic">
              {/* Using a simple splitter for demo purposes, in real app this would be more complex or markdown based */}
              {post.content.split('\n\n').map((paragraph, i) => (
                <p key={i} className="mb-8">{paragraph}</p>
@@ -114,7 +114,7 @@ const BlogPost = () => {
 
           {/* Related Articles Section */}
           {relatedPosts.length > 0 && (
-            <section className="mt-40 pt-24 border-t border-white/5">
+            <section className="mt-40 pt-24 border-t border-slate-100">
               <div className="flex flex-col md:row items-center justify-between mb-16 gap-8">
                 <div>
                   <span className="text-glowave-primary-blue font-bold uppercase tracking-[0.2em] text-[10px] mb-4 block">Continuum</span>

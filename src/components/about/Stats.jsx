@@ -26,7 +26,7 @@ const Stats = () => {
   };
 
   return (
-    <section className="py-24 border-y border-white/5 bg-glowave-dark-bg/50">
+    <section className="py-24 border-y border-slate-100 bg-white/50">
       <div className="container mx-auto px-6">
         <motion.div 
           initial="hidden"
@@ -37,10 +37,10 @@ const Stats = () => {
         >
           {stats.map((stat, index) => (
             <motion.div key={index} variants={itemVariants} className="text-center group">
-              <div className="text-6xl md:text-8xl font-bold font-display text-white mb-6 tracking-tighter group-hover:text-glowave-primary-blue transition-colors duration-500">
+              <div className="text-6xl md:text-8xl font-bold font-display text-glowave-text mb-6 tracking-tighter group-hover:text-glowave-primary-blue transition-colors duration-500">
                 <Counter value={stat.value} suffix={stat.suffix} />
               </div>
-              <p className="text-white/40 text-[10px] md:text-[12px] font-bold uppercase tracking-[0.3em]">{stat.label}</p>
+              <p className="text-slate-500 text-[10px] md:text-[12px] font-bold uppercase tracking-[0.3em]">{stat.label}</p>
               
               {/* Bottom accent */}
               <div className="w-8 h-1 bg-glowave-primary-blue/30 mx-auto mt-6 rounded-full group-hover:w-16 group-hover:bg-glowave-primary-blue transition-all duration-500" />

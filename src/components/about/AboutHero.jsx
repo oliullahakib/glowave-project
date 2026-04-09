@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 const AboutHero = () => {
   return (
-    <section className="relative pt-40 pb-24 bg-glowave-dark-bg overflow-hidden">
+    <section className="relative pt-40 pb-24 bg-white overflow-hidden">
       {/* Background Liquid Blobs */}
       <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-glowave-primary-blue/10 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 animate-pulse" />
       <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-glowave-deep-blue/10 rounded-full blur-[100px] translate-x-1/3 translate-y-1/3" />
@@ -27,7 +27,7 @@ const AboutHero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-3xl text-white/50 leading-relaxed font-medium max-w-2xl tracking-tight"
+            className="text-xl md:text-3xl text-slate-500 leading-relaxed font-medium max-w-2xl tracking-tight"
           >
             We are a collective obsessed with the intersection of architected growth and high-fidelity experience design.
           </motion.p>

@@ -2,16 +2,18 @@
 @import "tailwindcss";
 
 @theme {
-  --color-glowave-primary-blue: #0062E0;
-  --color-glowave-deep-blue: #003E99;
-  --color-glowave-soft-blue: #C2DDFF;
-  --color-glowave-light-gray: #F9FAFB;
-  --color-glowave-dark-bg: #05070A;
+  --color-glowave-primary-blue: #0066CC;
+  --color-glowave-deep-blue: #004C99;
+  --color-glowave-soft-blue: #E0F2FE;
+  --color-glowave-light-gray: #F8FAFC;
+  --color-glowave-text: #0F172A;
+  --color-glowave-text-muted: #64748B;
+  --color-glowave-bg: #FFFFFF;
 
-  --color-dark-950: #000103;
-  --color-dark-900: #05070A;
-  --color-dark-800: #0C0F14;
-  --color-dark-700: #151921;
+  --color-slate-50: #F8FAFC;
+  --color-slate-100: #F1F5F9;
+  --color-slate-200: #E2E8F0;
+  --color-slate-300: #CBD5E1;
 
   --font-sans: 'Plus Jakarta Sans', 'system-ui', 'sans-serif';
   --font-display: 'Plus Jakarta Sans', 'system-ui', 'sans-serif';
@@ -20,14 +22,14 @@
   --spacing-22: 5.5rem;
   --spacing-30: 7.5rem;
 
-  --shadow-premium-glow: 0 0 20px rgba(0, 98, 224, 0.3);
-  --shadow-premium-glow-hover: 0 0 40px rgba(0, 98, 224, 0.6);
+  --shadow-premium-glow: 0 10px 30px rgba(0, 102, 204, 0.15);
+  --shadow-premium-glow-hover: 0 15px 40px rgba(0, 102, 204, 0.25);
 
-  --bg-gradient-glow: linear-gradient(135deg, #0062E0 0%, #003E99 100%);
+  --bg-gradient-glow: linear-gradient(135deg, #0066CC 0%, #004C99 100%);
 }
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 html {
@@ -35,14 +37,14 @@ html {
 }
 
 body {
-  @apply bg-glowave-dark-bg text-white font-sans antialiased overflow-x-hidden;
+  @apply bg-glowave-bg text-glowave-text font-sans antialiased overflow-x-hidden;
   margin: 0;
   font-size: clamp(16px, 1.1vw, 18px);
 }
 
 @layer base {
   h1, h2, h3, h4, h5, h6 {
-    @apply font-sans font-bold tracking-tighter;
+    @apply font-sans font-bold tracking-tighter text-glowave-text;
     line-height: 1.1;
   }
 }
@@ -56,21 +58,21 @@ body {
   font-size: clamp(2.25rem, 5vw, 4rem);
 }
 
-/* Custom Components (Old School CSS to avoid build issues) */
+/* Custom Components (Refined for Light Theme) */
 .glass-effect {
-  @apply bg-white/3 backdrop-blur-2xl border border-white/10 shadow-2xl;
+  @apply bg-white/80 backdrop-blur-2xl border border-slate-200/50 shadow-xl;
 }
 
 .glass-effect-dark {
-  @apply bg-black/40 backdrop-blur-2xl border border-white/5 shadow-2xl;
+  @apply bg-slate-900/90 backdrop-blur-2xl border border-white/10 shadow-2xl;
 }
 
 .text-gradient {
-  @apply bg-clip-text text-transparent bg-linear-to-r from-glowave-primary-blue via-glowave-soft-blue to-white;
+  @apply bg-clip-text text-transparent bg-linear-to-r from-glowave-primary-blue to-glowave-deep-blue;
 }
 
 .animated-card {
-  @apply bg-white/3 backdrop-blur-2xl border border-white/10 shadow-2xl rounded-[2.5rem] p-8 transition-all duration-500 hover:-translate-y-2 hover:bg-white/5;
+  @apply bg-white border border-slate-100 shadow-lg rounded-[2.5rem] p-8 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-glowave-primary-blue/20;
 }
 
 .btn-premium {
@@ -81,8 +83,8 @@ body {
 }
 
 .btn-outline-premium {
-  @apply px-10 py-4.5 rounded-full font-bold border border-white/10 bg-white/5 
-         backdrop-blur-xl transition-all duration-500 hover:bg-white/10 hover:border-white/30 hover:scale-105;
+  @apply px-10 py-4.5 rounded-full font-bold border border-slate-200 bg-white 
+         transition-all duration-500 hover:bg-slate-50 hover:border-glowave-primary-blue/30 hover:scale-105 text-glowave-text;
 }
 
 .glass-border-premium {
@@ -95,7 +97,7 @@ body {
   inset: 0;
   padding: 1px;
   border-radius: inherit;
-  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.1));
+  background: linear-gradient(to bottom right, rgba(0, 102, 204, 0.2), rgba(0, 102, 204, 0.05) 50%, rgba(0, 102, 204, 0.1));
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: exclude;
   -webkit-mask-composite: destination-out;
@@ -108,10 +110,10 @@ body {
 
 .glow-mesh {
   background-image: 
-    radial-gradient(at 0% 0%, rgba(0, 98, 224, 0.2) 0px, transparent 55%),
-    radial-gradient(at 100% 0%, rgba(0, 62, 153, 0.15) 0px, transparent 55%),
-    radial-gradient(at 80% 80%, rgba(0, 98, 224, 0.1) 0px, transparent 55%),
-    radial-gradient(at 20% 80%, rgba(194, 221, 255, 0.08) 0px, transparent 55%);
+    radial-gradient(at 0% 0%, rgba(0, 102, 204, 0.05) 0px, transparent 55%),
+    radial-gradient(at 100% 0%, rgba(0, 102, 204, 0.03) 0px, transparent 55%),
+    radial-gradient(at 80% 80%, rgba(0, 102, 204, 0.04) 0px, transparent 55%),
+    radial-gradient(at 20% 80%, rgba(0, 102, 204, 0.02) 0px, transparent 55%);
 }
 
 ::-webkit-scrollbar {
@@ -119,11 +121,11 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-glowave-dark-bg;
+  @apply bg-slate-50;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-white/20 rounded-full hover:bg-glowave-primary-blue transition-colors;
+  @apply bg-slate-300 rounded-full hover:bg-glowave-primary-blue transition-colors;
 }
 
 .stagger-item {

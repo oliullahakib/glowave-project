@@ -10,7 +10,7 @@ const TeamMember = memo(({ member, index }) => (
     transition={{ delay: index * 0.1 }}
     className="group"
   >
-    <div className="relative rounded-4xl overflow-hidden glass-effect border border-white/5 p-4 transition-all duration-500 hover:border-glowave-primary-blue/30 hover:bg-white/4">
+    <div className="relative rounded-4xl overflow-hidden glass-effect border border-slate-100 p-4 transition-all duration-500 hover:border-glowave-primary-blue/30 hover:bg-slate-50 hover:shadow-2xl">
       <div className="aspect-4/5 rounded-4xl overflow-hidden relative mb-6">
         <img 
           src={`${member.image}&auto=format&fit=crop&q=80&w=400&fm=webp`} 
@@ -24,7 +24,7 @@ const TeamMember = memo(({ member, index }) => (
             <a 
               key={i} 
               href="#" 
-              className="w-10 h-10  rounded-xl glass-effect-dark flex items-center justify-center text-white hover:text-glowave-primary-blue transition-colors border border-white/10"
+              className="w-10 h-10  rounded-xl glass-effect flex items-center justify-center text-slate-600 hover:text-glowave-primary-blue transition-colors border border-slate-200"
             >
               <Icon />
             </a>
@@ -33,8 +33,8 @@ const TeamMember = memo(({ member, index }) => (
       </div>
       
       <div className="px-4 pb-4">
-        <h4 className="text-xl font-bold mb-1 group-hover:text-glowave-primary-blue transition-colors">{member.name}</h4>
-        <p className="text-white/40 text-sm font-medium tracking-wide uppercase">{member.role}</p>
+        <h4 className="text-glowave-text text-xl font-bold mb-1 group-hover:text-glowave-primary-blue transition-colors">{member.name}</h4>
+        <p className="text-slate-500 text-sm font-medium tracking-wide uppercase">{member.role}</p>
       </div>
     </div>
   </motion.div>
@@ -65,7 +65,7 @@ const Team = () => {
   ];
 
   return (
-    <section className="section-spacing bg-glowave-dark-bg relative overflow-hidden">
+    <section className="section-spacing bg-white relative overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center text-center mb-24 md:mb-32">
           <span className="text-glowave-primary-blue font-bold uppercase tracking-[0.3em] text-[10px] sm:text-[12px] mb-8 block">The Collective</span>

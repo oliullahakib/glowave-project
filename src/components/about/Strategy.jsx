@@ -24,7 +24,7 @@ const Strategy = () => {
   ];
 
   return (
-    <section className="section-spacing bg-dark-950 relative overflow-hidden">
+    <section className="section-spacing bg-white relative overflow-hidden">
       {/* Mesh Background */}
       <div className="absolute inset-0 glow-mesh opacity-20" />
 
@@ -64,7 +64,7 @@ const Strategy = () => {
                   <step.icon />
                 </div>
                 <h3 className="text-2xl font-bold mb-6 tracking-tight">{step.title}</h3>
-                <p className="text-white/40 text-base leading-relaxed">{step.desc}</p>
+                <p className="text-slate-500 text-base leading-relaxed">{step.desc}</p>
               </div>
             </motion.div>
           ))}

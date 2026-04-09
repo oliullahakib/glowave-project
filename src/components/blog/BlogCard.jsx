@@ -9,7 +9,7 @@ const BlogCard = memo(({ post }) => {
       whileHover={{ y: -10 }}
       className="group"
     >
-      <div className="glass-effect rounded-[2.5rem] overflow-hidden border border-white/5 h-full flex flex-col transition-all duration-500 hover:border-glowave-primary-blue/30 hover:bg-white/4">
+      <div className="glass-effect rounded-[2.5rem] overflow-hidden border border-slate-100 h-full flex flex-col transition-all duration-500 hover:border-glowave-primary-blue/30 hover:bg-slate-50 hover:shadow-2xl">
         {/* Image Container */}
         <div className="aspect-video relative overflow-hidden">
           <img 
@@ -26,9 +26,9 @@ const BlogCard = memo(({ post }) => {
 
         {/* Content */}
         <div className="p-8 grow flex flex-col">
-          <div className="flex items-center gap-4 text-white/30 text-[10px] font-bold uppercase tracking-widest mb-4">
+          <div className="flex items-center gap-4 text-slate-400 text-[10px] font-bold uppercase tracking-widest mb-4">
             <span>{post.date}</span>
-            <div className="w-1 h-1 rounded-full bg-white/10" />
+            <div className="w-1 h-1 rounded-full bg-slate-200" />
             <div className="flex items-center gap-1">
               <FiClock />
               <span>5 min read</span>
@@ -39,14 +39,14 @@ const BlogCard = memo(({ post }) => {
             {post.title}
           </h3>
           
-          <p className="text-white/40 text-sm leading-relaxed mb-8 line-clamp-3">
+          <p className="text-slate-500 text-sm leading-relaxed mb-8 line-clamp-3">
             {post.excerpt}
           </p>
 
           <div className="mt-auto">
             <Link 
               to={`/blog/${post.slug}`}
-              className="inline-flex items-center gap-2 text-sm font-bold text-white group-hover:text-glowave-primary-blue transition-colors"
+              className="inline-flex items-center gap-2 text-sm font-bold text-glowave-text group-hover:text-glowave-primary-blue transition-colors"
             >
               Read Full Insight 
               <FiArrowRight className="group-hover:translate-x-1 transition-transform" />

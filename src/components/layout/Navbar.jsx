@@ -10,7 +10,7 @@ const NavLink = ({ children, path, active, onClick }) => {
     <Link
       to={path}
       className={`relative text-sm font-medium transition-colors hover:text-glowave-primary-blue py-1 px-2 ${
-        active ? 'text-glowave-primary-blue' : 'text-white/70'
+        active ? 'text-glowave-primary-blue' : 'text-slate-600'
       }`}
       onClick={onClick}
     >
@@ -87,13 +87,13 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
         isOpen 
-          ? 'py-4 bg-glowave-dark-bg' 
+          ? 'py-4 bg-white' 
           : scrolled 
-            ? 'py-4 glass-effect border-b border-white/10' 
+            ? 'py-4 glass-effect border-b border-slate-200/50' 
             : 'py-6 bg-transparent'
       }`}
     >
-      <div className="container mx-auto px-6 flex justify-between items-center text-white">
+      <div className="container mx-auto px-6 flex justify-between items-center text-glowave-text">
         <Link to="/" className="text-2xl font-bold font-display tracking-tighter flex items-center gap-2">
           <motion.div 
             whileHover={{ scale: 1.1 }}
@@ -106,7 +106,7 @@ const Navbar = () => {
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-6">
-          <div className="flex items-center gap-8 bg-white/5 border border-white/10 px-8 py-2 rounded-full backdrop-blur-md">
+          <div className="flex items-center gap-8 bg-slate-50 border border-slate-200 px-8 py-2 rounded-full backdrop-blur-md">
             {navLinks.map((link) => (
               <NavLink
                 key={link.name}
@@ -125,7 +125,7 @@ const Navbar = () => {
         {/* Mobile Menu Toggle */}
         <motion.button 
           whileTap={{ scale: 0.9 }}
-          className="md:hidden text-white text-2xl z-50" 
+          className="md:hidden text-glowave-text text-2xl z-50" 
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <FiX /> : <FiMenu />}
@@ -140,14 +140,14 @@ const Navbar = () => {
             animate="open"
             exit="closed"
             variants={menuVariants}
-            className="fixed inset-0 bg-glowave-dark-bg backdrop-blur-2xl z-40 flex flex-col items-center pt-32 pb-12 px-6 overflow-y-auto md:hidden"
+            className="fixed inset-0 bg-white backdrop-blur-2xl z-40 flex flex-col items-center pt-32 pb-12 px-6 overflow-y-auto md:hidden"
           >
             {navLinks.map((link) => (
               <motion.div key={link.name} variants={linkVariants} className="w-full text-center py-4">
                 <Link
                   to={link.path}
                   className={`text-4xl font-bold font-display block transition-colors ${
-                    location.pathname === link.path ? 'text-glowave-primary-blue' : 'text-white/70 hover:text-white'
+                    location.pathname === link.path ? 'text-glowave-primary-blue' : 'text-slate-400 hover:text-glowave-text'
                   }`}
                   onClick={() => setIsOpen(false)}
                 >

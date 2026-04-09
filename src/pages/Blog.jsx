@@ -20,7 +20,7 @@ const Blog = () => {
               <h1 className="text-display-medium leading-[0.95] tracking-tighter mb-10">
                 The Growth <span className="text-gradient">Journal</span>
               </h1>
-              <p className="text-white/40 text-lg md:text-xl max-w-2xl mx-auto font-medium leading-relaxed">
+              <p className="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto font-medium leading-relaxed">
                 Expert perspectives on digital strategy, design, and the future of brand engagement.
               </p>
             </motion.div>

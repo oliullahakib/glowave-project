@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const CTA = () => {
   return (
-    <section className="section-spacing relative overflow-hidden bg-glowave-dark-bg">
+    <section className="section-spacing relative overflow-hidden bg-white">
       <div className="container mx-auto px-6">
         <div className="glass-effect rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden">
           {/* Background Glows */}
@@ -16,7 +16,7 @@ const CTA = () => {
               Ready to Accelerate Your <br />
               <span className="text-gradient">Digital Growth?</span>
             </h2>
-            <p className="text-white/60 text-xl max-w-2xl mx-auto mb-16 leading-relaxed font-medium tracking-tight">
+            <p className="text-slate-600 text-xl max-w-2xl mx-auto mb-16 leading-relaxed font-medium tracking-tight">
               Join hundreds of high-growth companies that trust Glowave to scale their digital presence and maximize ROI.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-8">

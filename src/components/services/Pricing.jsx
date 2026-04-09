@@ -49,7 +49,7 @@ const Pricing = () => {
   ];
 
   return (
-    <section className="section-spacing bg-glowave-dark-bg relative overflow-hidden">
+    <section className="section-spacing bg-white relative overflow-hidden">
       {/* Background radial glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-glowave-primary-blue/5 rounded-full blur-[160px] -z-1" />
 
@@ -70,10 +70,10 @@ const Pricing = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: index * 0.15 }}
-              className={`relative h-full flex flex-col p-10 md:p-14 rounded-[3rem] border transition-all duration-700 glass-effect-dark overflow-hidden ${
+              className={`relative h-full flex flex-col p-10 md:p-14 rounded-[3rem] border transition-all duration-700 glass-effect overflow-hidden ${
                 plan.recommended 
-                  ? 'border-glowave-primary-blue/60 shadow-premium-glow' 
-                  : 'border-white/5 hover:border-white/20'
+                  ? 'border-glowave-primary-blue shadow-premium-glow' 
+                  : 'border-slate-100 hover:border-slate-300'
               }`}
             >
               {plan.recommended && (
@@ -85,11 +85,11 @@ const Pricing = () => {
               <div className="mb-12 text-center md:text-left">
                 <span className="text-glowave-primary-blue font-bold uppercase tracking-[0.3em] text-[10px] mb-6 block">{plan.name}</span>
                 <div className="flex items-baseline gap-2 mb-8 justify-center md:justify-start">
-                  {plan.price !== 'Custom' && <span className="text-4xl font-bold font-display text-white/20 tracking-tighter">$</span>}
-                  <span className="text-6xl md:text-7xl font-bold font-display tracking-tighter text-white">{plan.price}</span>
-                  {plan.price !== 'Custom' && <span className="text-white/20 text-lg font-medium tracking-tight">/mo</span>}
+                  {plan.price !== 'Custom' && <span className="text-4xl font-bold font-display text-slate-300 tracking-tighter">$</span>}
+                  <span className="text-6xl md:text-7xl font-bold font-display tracking-tighter text-glowave-text">{plan.price}</span>
+                  {plan.price !== 'Custom' && <span className="text-slate-400 text-lg font-medium tracking-tight">/mo</span>}
                 </div>
-                <p className="text-white/40 text-lg leading-relaxed font-medium tracking-tight">
+                <p className="text-slate-500 text-lg leading-relaxed font-medium tracking-tight">
                   {plan.description}
                 </p>
               </div>
@@ -97,7 +97,7 @@ const Pricing = () => {
               <div className="grow mb-16">
                 <ul className="flex flex-col gap-6">
                   {plan.features.map((feature, i) => (
-                    <li key={i} className="flex items-start gap-4 text-[15px] font-medium text-white/60 tracking-tight">
+                    <li key={i} className="flex items-start gap-4 text-[15px] font-medium text-slate-600 tracking-tight">
                       <div className="w-6 h-6 rounded-full bg-glowave-primary-blue/10 flex items-center justify-center shrink-0 mt-0.5">
                         <FiCheck className="text-glowave-primary-blue text-xs" />
                       </div>

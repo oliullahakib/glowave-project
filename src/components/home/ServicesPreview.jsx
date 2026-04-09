@@ -20,7 +20,7 @@ const ServiceCard = memo(({ service, index }) => {
       {/* Background Glow */}
       <div className="absolute inset-0 bg-glowave-primary-blue/5 rounded-4xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       
-      <div className="animated-card relative h-full flex flex-col items-start border border-white/5 group-hover:border-glowave-primary-blue/30 overflow-hidden">
+      <div className="animated-card relative h-full flex flex-col items-start border border-slate-100 group-hover:border-glowave-primary-blue/30 overflow-hidden">
         {/* Animated Background Mesh */}
         <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 bg-[radial-gradient(circle_at_var(--mouse-x)_var(--mouse-y),rgba(0,98,224,0.4),transparent_50%)]" />
         
@@ -29,13 +29,13 @@ const ServiceCard = memo(({ service, index }) => {
         </div>
         
         <h3 className="text-2xl font-bold mb-5 tracking-tight relative z-10">{service.title}</h3>
-        <p className="text-white/50 text-base leading-relaxed mb-10 grow relative z-10">
+        <p className="text-slate-500 text-base leading-relaxed mb-10 grow relative z-10">
           {service.description}
         </p>
         
         <Link 
           to="/services" 
-          className="flex items-center gap-3 text-sm font-bold text-glowave-primary-blue hover:text-white transition-colors relative z-10 group/link"
+          className="flex items-center gap-3 text-sm font-bold text-glowave-primary-blue hover:text-glowave-deep-blue transition-colors relative z-10 group/link"
         >
           Explore Strategy 
           <FiArrowRight className="group-hover/link:translate-x-1 transition-transform" />
@@ -50,7 +50,7 @@ const ServiceCard = memo(({ service, index }) => {
 
 const ServicesPreview = () => {
   return (
-    <section className="section-spacing bg-glowave-dark-bg relative overflow-hidden">
+    <section className="section-spacing bg-white relative overflow-hidden">
       {/* Background Accents */}
       <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-glowave-primary-blue/5 blur-[120px] rounded-full -z-1" />
       <div className="absolute bottom-0 left-0 w-1/4 h-1/4 bg-glowave-deep-blue/5 blur-[120px] rounded-full -z-1" />

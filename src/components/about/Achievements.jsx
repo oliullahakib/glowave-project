@@ -30,7 +30,7 @@ const Achievements = () => {
   ];
 
   return (
-    <section className="section-spacing bg-dark-900 overflow-hidden relative">
+    <section className="section-spacing bg-white overflow-hidden relative">
       <div className="absolute top-0 right-0 w-[600px] h-px bg-linear-to-l from-glowave-primary-blue/50 to-transparent" />
       
       <div className="container mx-auto px-6">
@@ -41,7 +41,7 @@ const Achievements = () => {
               Decades of <br />
               <span className="text-gradient">Digital Mastery.</span>
             </h2>
-            <p className="text-white/40 leading-relaxed">
+            <p className="text-slate-500 leading-relaxed text-lg">
               We don't just participate in the industry—we define its benchmarks. Our trophy cabinet reflects our obsession with performance and precision.
             </p>
           </div>
@@ -56,15 +56,15 @@ const Achievements = () => {
                 transition={{ delay: index * 0.1 }}
                 className="group"
               >
-                <div className="glass-effect p-10 rounded-[2.5rem] border border-white/5 group-hover:border-glowave-primary-blue/30 transition-all duration-500 hover:bg-white/4">
+                <div className="glass-effect p-10 rounded-[2.5rem] border border-slate-100 group-hover:border-glowave-primary-blue/30 transition-all duration-500 hover:bg-slate-50 hover:shadow-2xl">
                   <div className="flex justify-between items-start mb-8">
                     <div className="text-4xl text-glowave-primary-blue/20 group-hover:text-glowave-primary-blue transition-colors duration-500">
                       <item.icon />
                     </div>
-                    <span className="text-white/20 font-display font-bold text-3xl group-hover:text-glowave-primary-blue/40 transition-colors">{item.year}</span>
+                    <span className="text-slate-200 font-display font-bold text-3xl group-hover:text-glowave-primary-blue/40 transition-colors">{item.year}</span>
                   </div>
-                  <h4 className="text-xl font-bold mb-4">{item.title}</h4>
-                  <p className="text-white/40 text-sm leading-relaxed">{item.desc}</p>
+                  <h4 className="text-glowave-text text-xl font-bold mb-4">{item.title}</h4>
+                  <p className="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
                 </div>
               </motion.div>
             ))}

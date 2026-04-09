@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 const ServicesHero = () => {
   return (
-    <section className="relative pt-40 pb-20 bg-glowave-dark-bg overflow-hidden">
+    <section className="relative pt-40 pb-20 bg-white overflow-hidden">
       {/* Background Accents */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-glowave-primary-blue/5 rounded-full blur-[120px] -z-1" />
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-glowave-deep-blue/5 rounded-full blur-[100px] -z-1" />
@@ -21,7 +21,7 @@ const ServicesHero = () => {
             Elevate Your <br />
             <span className="text-gradient">Digital Velocity</span>
           </h1>
-          <p className="text-xl md:text-2xl text-white/50 leading-relaxed max-w-2xl mx-auto font-medium tracking-tight">
+          <p className="text-xl md:text-2xl text-slate-500 leading-relaxed max-w-2xl mx-auto font-medium tracking-tight">
             We engineer high-performance frameworks and results-driven strategies designed to scale your brand with architectural precision.
           </p>
         </motion.div>
@@ -33,7 +33,7 @@ const ServicesHero = () => {
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
         className="absolute top-1/2 left-10 hidden lg:block"
       >
-        <div className="glass-effect p-4 rounded-2xl border border-white/5 whitespace-nowrap text-[10px] font-bold tracking-widest uppercase">
+        <div className="glass-effect p-4 rounded-2xl border border-slate-100 whitespace-nowrap text-[10px] font-bold tracking-widest uppercase">
           Precision Engineering
         </div>
       </motion.div>

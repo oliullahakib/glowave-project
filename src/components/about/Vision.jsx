@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 const Vision = () => {
   return (
-    <section className="section-spacing bg-glowave-dark-bg">
+    <section className="section-spacing bg-white">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <motion.div
@@ -12,13 +12,13 @@ const Vision = () => {
             transition={{ duration: 1 }}
             className="relative"
           >
-            <div className="aspect-square rounded-4xl overflow-hidden glass-effect border border-white/10 group">
+            <div className="aspect-square rounded-4xl overflow-hidden glass-effect border border-slate-200 group">
               <img 
                 src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1200&fm=webp" 
                 alt="Visionary Technology" 
                 className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-1000"
               />
-              <div className="absolute inset-0 bg-linear-to-t from-glowave-dark-bg via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-white via-transparent to-transparent" />
             </div>
             
             {/* Visual Accents */}
@@ -39,7 +39,7 @@ const Vision = () => {
               Redefining the <br />
               <span className="text-gradient">Digital Standard.</span>
             </h2>
-            <p className="text-white/50 text-xl leading-relaxed mb-12 max-w-xl font-medium tracking-tight">
+            <p className="text-slate-500 text-xl leading-relaxed mb-12 max-w-xl font-medium tracking-tight">
               Our vision is to architect a world where digital experiences are not just functional, but transformative. We believe in the power of invisible technology and visible design.
             </p>
             <div className="space-y-6">
@@ -50,8 +50,8 @@ const Vision = () => {
                 <div key={i} className="flex gap-6 items-start">
                   <div className="w-1.5 h-1.5 rounded-full bg-glowave-primary-blue mt-2.5 shrink-0" />
                   <div>
-                    <h4 className="text-white font-bold mb-1">{item.title}</h4>
-                    <p className="text-white/40 text-sm">{item.desc}</p>
+                    <h4 className="text-glowave-text font-bold mb-1">{item.title}</h4>
+                    <p className="text-slate-500 text-sm">{item.desc}</p>
                   </div>
                 </div>
               ))}

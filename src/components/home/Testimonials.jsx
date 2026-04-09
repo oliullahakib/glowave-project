@@ -48,7 +48,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="section-spacing bg-glowave-dark-bg relative overflow-hidden">
+    <section className="section-spacing bg-white relative overflow-hidden">
       {/* Decorative Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-glowave-primary-blue/5 rounded-full blur-[150px] -z-1" />
 
@@ -80,10 +80,10 @@ const Testimonials = () => {
               }}
               className="absolute inset-0"
             >
-              <div className="glass-effect p-10 md:p-16 rounded-[3rem] border border-white/10 relative h-full flex flex-col justify-center items-center text-center">
+              <div className="glass-effect p-10 md:p-16 rounded-[3rem] border border-slate-200 relative h-full flex flex-col justify-center items-center text-center">
                 <FaQuoteLeft className="text-glowave-primary-blue/20 text-6xl absolute top-10 left-10" />
                 
-                <p className="text-xl md:text-3xl font-medium text-white/90 leading-relaxed mb-10 italic">
+                <p className="text-xl md:text-3xl font-medium text-slate-800 leading-relaxed mb-10 italic">
                   "{testimonials[activeIndex].content}"
                 </p>
 
@@ -94,13 +94,13 @@ const Testimonials = () => {
                       alt={testimonials[activeIndex].author} 
                       className="w-16 h-16 rounded-full border-2 border-glowave-primary-blue shadow-premium-glow"
                     />
-                    <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-glowave-primary-blue rounded-full border-2 border-dark-900 flex items-center justify-center">
+                    <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-glowave-primary-blue rounded-full border-2 border-white flex items-center justify-center">
                       <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
                     </div>
                   </div>
                   <div>
-                    <h4 className="text-white font-bold text-lg">{testimonials[activeIndex].author}</h4>
-                    <p className="text-glowave-soft-blue text-sm font-medium tracking-wide">{testimonials[activeIndex].role}</p>
+                    <h4 className="text-glowave-text font-bold text-lg">{testimonials[activeIndex].author}</h4>
+                    <p className="text-slate-500 text-sm font-medium tracking-wide">{testimonials[activeIndex].role}</p>
                   </div>
                 </div>
               </div>
@@ -111,7 +111,7 @@ const Testimonials = () => {
           <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 flex items-center gap-12 z-20">
             <button 
               onClick={prevSlide}
-              className="w-12 h-12 rounded-2xl glass-effect border border-white/10 flex items-center justify-center text-white/50 hover:text-white hover:border-glowave-primary-blue/50 transition-all group"
+              className="w-12 h-12 rounded-2xl glass-effect border border-slate-200 flex items-center justify-center text-slate-500 hover:text-glowave-primary-blue hover:border-glowave-primary-blue/30 transition-all group"
             >
               <FiChevronLeft className="text-2xl group-hover:-translate-x-1 transition-transform" />
             </button>
@@ -125,7 +125,7 @@ const Testimonials = () => {
                     setActiveIndex(i);
                   }}
                   className={`h-1.5 rounded-full transition-all duration-500 ${
-                    i === activeIndex ? 'w-8 bg-glowave-primary-blue shadow-premium-glow' : 'w-2 bg-white/10 hover:bg-white/30'
+                    i === activeIndex ? 'w-8 bg-glowave-primary-blue shadow-premium-glow' : 'w-2 bg-slate-300 hover:bg-slate-400'
                   }`}
                 />
               ))}
@@ -133,7 +133,7 @@ const Testimonials = () => {
 
             <button 
               onClick={nextSlide}
-              className="w-12 h-12 rounded-2xl glass-effect border border-white/10 flex items-center justify-center text-white/50 hover:text-white hover:border-glowave-primary-blue/50 transition-all group"
+              className="w-12 h-12 rounded-2xl glass-effect border border-slate-200 flex items-center justify-center text-slate-500 hover:text-glowave-primary-blue hover:border-glowave-primary-blue/30 transition-all group"
             >
               <FiChevronRight className="text-2xl group-hover:translate-x-1 transition-transform" />
             </button>

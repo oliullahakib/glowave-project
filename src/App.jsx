@@ -17,7 +17,7 @@ function App() {
   const location = useLocation();
 
   return (
-    <div className="min-h-screen bg-dark-900 glow-mesh relative">
+    <div className="min-h-screen bg-white relative">
       <Navbar />
       <AnimatePresence mode="wait">
         <Suspense fallback={<PageLoader />}>

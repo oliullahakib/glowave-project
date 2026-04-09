@@ -9,20 +9,20 @@ const FormInput = ({ label, type = "text", placeholder, isTextArea = false }) =>
     viewport={{ once: true }}
     className="flex flex-col gap-2 group w-full"
   >
-    <label className="text-[10px] uppercase tracking-[0.3em] font-bold text-white/30 group-focus-within:text-glowave-primary-blue transition-colors ml-1">
+    <label className="text-[10px] uppercase tracking-[0.3em] font-bold text-slate-400 group-focus-within:text-glowave-primary-blue transition-colors ml-1">
       {label}
     </label>
     {isTextArea ? (
       <textarea
         rows="5"
         placeholder={placeholder}
-        className="w-full bg-white/5 border border-white/5 rounded-2xl py-5 px-6 text-sm focus:outline-none focus:border-glowave-primary-blue/30 focus:bg-white/10 transition-all duration-500 placeholder:text-white/10 tracking-tight"
+        className="w-full bg-slate-50 border border-slate-200 rounded-2xl py-5 px-6 text-sm text-glowave-text focus:outline-none focus:border-glowave-primary-blue/30 focus:bg-white transition-all duration-500 placeholder:text-slate-300 tracking-tight"
       />
     ) : (
       <input
         type={type}
         placeholder={placeholder}
-        className="w-full bg-white/5 border border-white/5 rounded-2xl py-5 px-6 text-sm focus:outline-none focus:border-glowave-primary-blue/30 focus:bg-white/10 transition-all duration-500 placeholder:text-white/10 tracking-tight"
+        className="w-full bg-slate-50 border border-slate-200 rounded-2xl py-5 px-6 text-sm text-glowave-text focus:outline-none focus:border-glowave-primary-blue/30 focus:bg-white transition-all duration-500 placeholder:text-slate-300 tracking-tight"
       />
     )}
   </motion.div>
@@ -34,7 +34,7 @@ const ContactForm = () => {
       {/* Background Glow */}
       <div className="absolute inset-x-0 -inset-y-5 bg-glowave-primary-blue/5 blur-3xl rounded-[4rem] -z-1 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
       
-      <div className="glass-effect p-10 md:p-14 rounded-[3.5rem] border border-white/5 shadow-3xl relative overflow-hidden">
+      <div className="glass-effect p-10 md:p-14 rounded-[3.5rem] border border-slate-100 shadow-3xl relative overflow-hidden">
         {/* Progress bar accent */}
         <div className="absolute top-0 left-0 right-0 h-1.5 bg-linear-to-r from-glowave-primary-blue to-transparent" />
         
@@ -57,7 +57,7 @@ const ContactForm = () => {
               Send Message
               <FiSend className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </Button>
-            <p className="text-[10px] text-center text-white/20 mt-8 uppercase tracking-[0.3em] font-bold">
+            <p className="text-[10px] text-center text-slate-400 mt-8 uppercase tracking-[0.3em] font-bold">
               Protocol initiation: typical within 4 business hours
             </p>
           </motion.div>

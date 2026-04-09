@@ -10,7 +10,7 @@ import ScrollReveal from '../components/ui/ScrollReveal';
 const Contact = () => {
   return (
     <PageTransition>
-      <div className="flex flex-col min-h-screen bg-glowave-dark-bg overflow-hidden">
+      <div className="flex flex-col min-h-screen bg-white overflow-hidden">
         {/* Hero Section */}
         <section className="pt-40 pb-24 relative">
           {/* Background Glows */}
@@ -31,7 +31,7 @@ const Contact = () => {
                     subtitle="Nexus Connectivity" 
                     title="Initialize Your Global Scale" 
                   />
-                  <p className="text-white/40 text-xl leading-relaxed mb-16 max-w-xl font-medium">
+                  <p className="text-slate-400 text-xl leading-relaxed mb-16 max-w-xl font-medium">
                     Ready to architect your digital dominance? Engage with our strategic collective to transform your vision into an industry-leading infrastructure.
                   </p>
                   
