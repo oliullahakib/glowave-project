@@ -12,13 +12,12 @@ const Vision = () => {
             transition={{ duration: 1 }}
             className="relative"
           >
-            <div className="aspect-square rounded-4xl overflow-hidden glass-effect border border-slate-200 group">
+            <div className="aspect-square rounded-4xl overflow-hidden border border-slate-200 group">
               <img 
                 src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1200&fm=webp" 
                 alt="Visionary Technology" 
-                className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-1000"
+                className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-1000"
               />
-              <div className="absolute inset-0 bg-linear-to-t from-white via-transparent to-transparent" />
             </div>
             
             {/* Visual Accents */}

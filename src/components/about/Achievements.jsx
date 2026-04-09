@@ -58,10 +58,10 @@ const Achievements = () => {
               >
                 <div className="glass-effect p-10 rounded-[2.5rem] border border-slate-100 group-hover:border-glowave-primary-blue/30 transition-all duration-500 hover:bg-slate-50 hover:shadow-2xl">
                   <div className="flex justify-between items-start mb-8">
-                    <div className="text-4xl text-glowave-primary-blue/20 group-hover:text-glowave-primary-blue transition-colors duration-500">
+                    <div className="text-4xl text-glowave-primary-blue/60 group-hover:text-glowave-primary-blue transition-colors duration-500">
                       <item.icon />
                     </div>
-                    <span className="text-slate-200 font-display font-bold text-3xl group-hover:text-glowave-primary-blue/40 transition-colors">{item.year}</span>
+                    <span className="text-black/60 font-display font-bold text-3xl group-hover:text-glowave-primary-blue/40 transition-colors">{item.year}</span>
                   </div>
                   <h4 className="text-glowave-text text-xl font-bold mb-4">{item.title}</h4>
                   <p className="text-slate-500 text-sm leading-relaxed">{item.desc}</p>

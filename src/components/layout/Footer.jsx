@@ -99,13 +99,13 @@ const Footer = () => {
         </div>
 
         <div className="pt-12 border-t border-slate-100 flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="flex items-center gap-8 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400">
+          <div className="flex items-center gap-8 text-[11px] font-bold uppercase tracking-[0.2em] text-black">
             <a href="#" className="hover:text-glowave-primary-blue transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-glowave-primary-blue transition-colors">Terms of Service</a>
             <a href="#" className="hover:text-glowave-primary-blue transition-colors">Cookies</a>
           </div>
           
-          <p className="text-slate-400 text-xs font-medium">
+          <p className="text-black text-xs font-medium">
             © {new Date().getFullYear()} Glowave Agency. Built for the modern web.
           </p>
         </div>

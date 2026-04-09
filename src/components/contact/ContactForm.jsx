@@ -9,20 +9,20 @@ const FormInput = ({ label, type = "text", placeholder, isTextArea = false }) =>
     viewport={{ once: true }}
     className="flex flex-col gap-2 group w-full"
   >
-    <label className="text-[10px] uppercase tracking-[0.3em] font-bold text-slate-400 group-focus-within:text-glowave-primary-blue transition-colors ml-1">
+    <label className="text-[10px] uppercase tracking-[0.3em] font-bold text-blue-500 group-focus-within:text-glowave-primary-blue transition-colors ml-1">
       {label}
     </label>
     {isTextArea ? (
       <textarea
         rows="5"
         placeholder={placeholder}
-        className="w-full bg-slate-50 border border-slate-200 rounded-2xl py-5 px-6 text-sm text-glowave-text focus:outline-none focus:border-glowave-primary-blue/30 focus:bg-white transition-all duration-500 placeholder:text-slate-300 tracking-tight"
+        className="w-full bg-slate-50 border border-slate-200 rounded-2xl py-5 px-6 text-sm text-glowave-text focus:outline-none focus:border-glowave-primary-blue/30 focus:bg-white transition-all duration-500 placeholder:text-black tracking-tight"
       />
     ) : (
       <input
         type={type}
         placeholder={placeholder}
-        className="w-full bg-slate-50 border border-slate-200 rounded-2xl py-5 px-6 text-sm text-glowave-text focus:outline-none focus:border-glowave-primary-blue/30 focus:bg-white transition-all duration-500 placeholder:text-slate-300 tracking-tight"
+        className="w-full bg-slate-50 border border-slate-200 rounded-2xl py-5 px-6 text-sm text-glowave-text focus:outline-none focus:border-glowave-primary-blue/30 focus:bg-white transition-all duration-500 placeholder:text-black tracking-tight"
       />
     )}
   </motion.div>
