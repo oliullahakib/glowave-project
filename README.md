@@ -1,16 +1,56 @@
-# React + Vite
+# Glowave
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**[Live Demo](https://glowave-ol.netlify.app/)**
 
-Currently, two official plugins are available:
+Glowave is a high-performance SaaS landing page architected for modern brands seeking digital dominance. It combines premium experience design with strategic growth engineering.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Purpose
 
-## React Compiler
+The goal of Glowave is to provide an ultra-fast, visually stunning, and conversion-optimized interface that communicates authority and innovation. Built with a "Light Theme" first approach, it leverages clean aesthetics and vibrant brand colors to create a world-class user journey.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+- **Framework**: [React 19](https://react.dev/)
+- **Build Tool**: [Vite](https://vitejs.dev/)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/) & [GSAP](https://gsap.com/)
+- **3D Visuals**: [Three.js](https://threejs.org/) with [React Three Fiber](https://r3f.docs.pmnd.rs/getting-started/introduction)
+- **Icons**: [React Icons](https://react-icons.github.io/react-icons/) & [Lucide React](https://lucide.dev/)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ✨ Key Features
+
+- **Premium Light Theme**: A clean, accessible, and high-fidelity design system.
+- **3D Interactions**: Immersive 3D hero elements and magnetic button effects.
+- **Fluid Typography**: Responsive text scaling across all device sizes.
+- **Glassmorphism**: Sophisticated translucent UI components with high-end blur effects.
+- **Performance Optimized**: Minimal bundle size and optimized rendering for Core Web Vitals.
+
+## 📦 Setup & Installation
+
+Follow these steps to get the project running locally:
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/oliullahakib/glowave-project.git
+cd glowave-project
+```
+
+### 2. Install dependencies
+```bash
+npm install
+```
+
+### 3. Start the development server
+```bash
+npm run dev
+```
+
+The application will be available at `http://localhost:5173`.
+
+## 🚢 Deployment
+
+The project is configured for deployment on platforms like Vercel or Netlify. A `_redirects` file is included in the `public` folder to support Single Page Application (SPA) routing.
+
+---
+
+Built with precision by **Glowave Agency**.
