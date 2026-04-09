@@ -12,9 +12,9 @@ const Home = () => {
     <PageTransition>
       <div className="flex flex-col">
         <Hero />
-        <ScrollReveal><Clients /></ScrollReveal>
         <ScrollReveal><ServicesPreview /></ScrollReveal>
         <ScrollReveal><Benefits /></ScrollReveal>
+        <ScrollReveal><Clients /></ScrollReveal>
         <ScrollReveal><Testimonials /></ScrollReveal>
         <ScrollReveal><CTA /></ScrollReveal>
       </div>

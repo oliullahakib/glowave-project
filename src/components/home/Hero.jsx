@@ -3,6 +3,7 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { Float, MeshDistortMaterial, Sphere } from '@react-three/drei';
 import { motion, useSpring } from 'framer-motion';
 import Button from '../ui/Button';
+import { Link } from 'react-router-dom';
 
 // 3D Glass Sphere Component
 const GlassSphere = () => {
@@ -135,17 +136,14 @@ const Hero = () => {
 
             <div className="flex flex-col sm:flex-row items-center gap-8">
               <Button variant="primary" className="w-full sm:w-auto px-12 py-5 text-lg group">
-                Initialize Project
+                <Link to="/contact">Initialize Project</Link>
                 <motion.span
                   animate={{ x: [0, 5, 0] }}
                   transition={{ repeat: Infinity, duration: 1.5 }}
                 >
                   →
                 </motion.span>
-              </Button>
-              <Button variant="secondary" className="w-full sm:w-auto px-12 py-5 text-lg">
-                Explore Capabilities
-              </Button>
+              </Button>    
             </div>
 
             {/* Social Proof / Stats */}

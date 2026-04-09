@@ -118,7 +118,7 @@ const Navbar = () => {
             ))}
           </div>
           <Button variant="primary" className="py-2.5 px-6 text-sm">
-            Get Started
+           <Link to="/services">Get Started</Link>
           </Button>
         </div>
 
@@ -156,9 +156,10 @@ const Navbar = () => {
               </motion.div>
             ))}
             <motion.div variants={linkVariants} className="w-full flex justify-center items-center max-w-[280px] mt-8">
+                <Link to="/service">
               <Button variant="primary" className="w-full py-5 text-xl" onClick={() => setIsOpen(false)}>
-                Get Started
-              </Button>
+              Get Started</Button>
+              </Link>
             </motion.div>
           </motion.div>
         )}

@@ -76,7 +76,7 @@ const Benefits = () => {
             >
               <div className="mb-14">
                 <span className="text-glowave-primary-blue font-bold uppercase tracking-[0.2em] text-xs mb-4 block">
-                  The Glowave Advantage
+                  Why Choose us
                 </span>
                 <h2 className="text-4xl md:text-6xl font-bold font-display leading-tight">
                   Infrastructure Built for <br />

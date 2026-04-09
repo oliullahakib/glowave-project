@@ -1,5 +1,6 @@
 import Button from '../ui/Button';
 import AnimatedWrapper from '../ui/AnimatedWrapper';
+import { Link } from 'react-router-dom';
 
 const CTA = () => {
   return (
@@ -20,10 +21,7 @@ const CTA = () => {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
               <Button variant="primary" className="w-full sm:w-auto text-lg py-5 px-12">
-                Book a Strategy Call
-              </Button>
-              <Button variant="secondary" className="w-full sm:w-auto text-lg py-5 px-12">
-                Read Case Studies
+                <Link to="/contact">Book a Strategy Call</Link>
               </Button>
             </div>
           </AnimatedWrapper>

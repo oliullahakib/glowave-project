@@ -51,9 +51,10 @@ const ContactForm = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
+            className='flex flex-col justify-center items-center'
           >
-            <Button variant="primary" className="w-full py-5 text-base group/btn">
-              Dispatch Engagement Protocol
+            <Button variant="primary" className="w-full sm:w-auto px-12 py-5 text-lg group">
+              Send Message
               <FiSend className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </Button>
             <p className="text-[10px] text-center text-white/20 mt-8 uppercase tracking-[0.3em] font-bold">
