@@ -38,9 +38,10 @@ const ConsultationCTA = () => {
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              className='flex justify-center items-center'
             >
               <button className="btn-premium px-12 py-5 group">
-                Reserve Consultation Slot
+                Reserve Slot
                 <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
               </button>
             </motion.div>

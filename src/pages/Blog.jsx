@@ -28,7 +28,6 @@ const Blog = () => {
         </section>
         
         <ScrollReveal><BlogList /></ScrollReveal>
-        <ScrollReveal><CTA /></ScrollReveal>
       </div>
     </PageTransition>
   );
